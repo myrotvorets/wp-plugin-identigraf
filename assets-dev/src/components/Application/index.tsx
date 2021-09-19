@@ -7,6 +7,7 @@ import SearchResults from '../SearchResults';
 export default function Application(): ReactElement {
 	return (
 		<Container className="p-3 my-3">
+			<h1>{ self.i8f.title }</h1>
 			<Router>
 				<Switch>
 					<Route

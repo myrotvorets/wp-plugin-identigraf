@@ -31,9 +31,9 @@ final class Admin {
 
 	public function admin_menu(): void {
 		add_options_page( __( 'IDentigraF Settings', 'i8fa' ), __( 'IDentigraF', 'i8fa' ), 'manage_options', self::OPTIONS_MENU_SLUG, [ __CLASS__, 'options_page' ] );
-		add_menu_page( __( 'Search', 'i8fa' ), __( 'IDentigraF', 'i8fa' ), 'level_1', 'i8f' );
+		add_menu_page( __( 'Search by Photo', 'i8fa' ), __( 'IDentigraF', 'i8fa' ), 'level_1', 'i8f' );
 
-		$this->search_slug = add_submenu_page( 'i8f', __( 'Search', 'i8fa' ), __( 'Search', 'i8fa' ), 'level_1', 'i8f', [ $this, 'i8f_page' ] );
+		$this->search_slug = add_submenu_page( 'i8f', __( 'Search by Photo', 'i8fa' ), __( 'Search', 'i8fa' ), 'level_1', 'i8f', [ $this, 'i8f_page' ] );
 
 		if ( $this->search_slug ) {
 			if ( Settings::instance()->valid() ) {
@@ -54,6 +54,7 @@ final class Admin {
 			wp_enqueue_script( 'i8f', plugins_url( 'assets/search.min.js', __DIR__ ), [ 'react', 'react-dom', 'wp-api-fetch', 'wp-i18n' ], '1', true );
 			wp_localize_script( 'i8f', 'i8f', [
 				'endpoint' => Settings::instance()->get_endpoint(),
+				'title'    => get_admin_page_title(),
 			] );
 			wp_set_script_translations( 'i8f', 'i8fjs', plugin_dir_path( dirname( __DIR__ ) . '/index.php' ) . '/lang' );
 		}
@@ -64,7 +65,7 @@ final class Admin {
 	}
 
 	public function i8f_page(): void {
-		echo '<div class="wrap"></div>';
+		printf( '<div class="wrap"><h1>%s</h1><main id="app"></main></div>', esc_html( get_admin_page_title() ) );
 	}
 
 	public function redirect_to_settings(): void {

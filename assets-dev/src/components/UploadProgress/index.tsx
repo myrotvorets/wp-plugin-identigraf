@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { ProgressBar } from 'react-bootstrap';
+import { __ } from '@wordpress/i18n';
 
 export interface UploadProgressProps {
 	progress: number | null | undefined;
@@ -12,7 +13,7 @@ export default function UploadProgress( { progress }: UploadProgressProps ): Rea
 
 	return (
 		<div className="d-flex align-items-center mb-3">
-			Upload:
+			{ __( 'Upload:', 'i8fjs' ) }
 			<ProgressBar
 				now={ -1 === progress ? 100 : progress }
 				striped={ -1 === progress }

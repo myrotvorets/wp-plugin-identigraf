@@ -104,36 +104,33 @@ export default class SearchForm extends Component<unknown, State> {
 		}
 
 		return (
-			<>
-				<h1>{ __( 'IDentigraF: Search by Photo', 'i8fjs' ) }</h1>
-				<Form encType="multipart/form-data" onSubmit={ this._onFormSubmit }>
-					{ error && <Alert variant="danger">{ error }</Alert> }
+			<Form encType="multipart/form-data" onSubmit={ this._onFormSubmit }>
+				{ error && <Alert variant="danger">{ error }</Alert> }
 
-					<Form.Group controlId="photo" className="mb-3">
-						<Form.Label>{ __( 'Photo', 'i8fjs' ) }</Form.Label>
-						<Form.Control
-							name="photo"
-							type="file"
-							required
-							accept="image/png, image/jpeg"
-							disabled={ uploadProgress !== null }
-							onChange={ this._onFileChange }
-						/>
-					</Form.Group>
+				<Form.Group controlId="photo" className="mb-3">
+					<Form.Label>{ __( 'Photo', 'i8fjs' ) }</Form.Label>
+					<Form.Control
+						name="photo"
+						type="file"
+						required
+						accept="image/png, image/jpeg"
+						disabled={ uploadProgress !== null }
+						onChange={ this._onFileChange }
+					/>
+				</Form.Group>
 
-					<Row>
-						<Col>
-							<PhotoPreview image={ image } />
-						</Col>
-					</Row>
+				<Row>
+					<Col>
+						<PhotoPreview image={ image } />
+					</Col>
+				</Row>
 
-					<UploadProgress progress={ uploadProgress } />
+				<UploadProgress progress={ uploadProgress } />
 
-					<Button variant="primary" type="submit">
-						{ __( 'Submit', 'i8fjs' ) }
-					</Button>
-				</Form>
-			</>
+				<Button variant="primary" type="submit">
+					{ __( 'Submit', 'i8fjs' ) }
+				</Button>
+			</Form>
 		);
 	}
 }

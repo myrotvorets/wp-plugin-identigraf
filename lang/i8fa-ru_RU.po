@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IDentigraF 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
-"POT-Creation-Date: 2021-09-19T11:52:41+03:00\n"
+"POT-Creation-Date: 2021-09-19T17:53:31+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,10 +37,14 @@ msgid "IDentigraF Settings"
 msgstr "IDentigraF: настройки"
 
 #: inc/class-admin.php:34 inc/class-admin.php:36
+msgid "Search by Photo"
+msgstr "Поиск по фотографии"
+
+#: inc/class-admin.php:36
 msgid "Search"
 msgstr "Поиск"
 
-#: inc/class-admin.php:81
+#: inc/class-admin.php:82
 msgid "Settings"
 msgstr "Настройки"
 

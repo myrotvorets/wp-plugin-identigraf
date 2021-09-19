@@ -58,15 +58,11 @@ msgstr "Сходство: %1$d%%"
 msgid "Face to search"
 msgstr "Искомое лицо"
 
-#: assets-dev/src/components/SearchForm/index.tsx:108
-msgid "IDentigraF: Search by Photo"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:113
+#: assets-dev/src/components/SearchForm/index.tsx:111
 msgid "Photo"
 msgstr "Фотография"
 
-#: assets-dev/src/components/SearchForm/index.tsx:133
+#: assets-dev/src/components/SearchForm/index.tsx:131
 msgid "Submit"
 msgstr "Отправить"
 
@@ -112,6 +108,10 @@ msgid ""
 "Unfortunately, the system has failed to recognize any face on the photo."
 msgstr ""
 "К сожалению, системе не удалось распознать ни одного лица на фотографии."
+
+#: assets-dev/src/components/UploadProgress/index.tsx:16
+msgid "Upload:"
+msgstr "Загрузка:"
 
 #: assets-dev/src/components/WaitForm/index.tsx:10
 msgid "Please wait…"
