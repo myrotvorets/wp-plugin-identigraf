@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es2019",
+        "module": "commonjs",
+        "jsx": "react",
+        "outDir": "build",
+        "sourceMap": false,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true
+    },
+    "include": ["assets-dev/webpack.*.ts", "assets-dev/.webpack/*.ts", "assets-dev/src/**/*.ts", "assets-dev/src/**/*.tsx"],
+    "exclude": ["node_modules"]
+}

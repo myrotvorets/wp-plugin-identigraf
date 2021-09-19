@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: assets-dev/src/api/index.ts:16
+msgid "Error getting the authentication token"
+msgstr ""
+
+#: assets-dev/src/api/index.ts:55
+msgid "Error communicating with the server"
+msgstr ""
+
+#: assets-dev/src/components/CapturedFace/index.tsx:10
+msgid "Recognized face"
+msgstr ""
+
+#: assets-dev/src/components/CapturedFace/index.tsx:13
+#. 1: min similarity, 2: max similarity
+msgid "%1$d…%2$d"
+msgstr ""
+
+#: assets-dev/src/components/MatchedFace/index.tsx:29
+msgid "Unknown person"
+msgstr ""
+
+#: assets-dev/src/components/MatchedFace/index.tsx:34
+msgid "Face"
+msgstr ""
+
+#: assets-dev/src/components/MatchedFace/index.tsx:37
+#. 1: country name
+msgid "Country: %s"
+msgstr ""
+
+#: assets-dev/src/components/MatchedFace/index.tsx:41
+msgid "Matched photo"
+msgstr ""
+
+#: assets-dev/src/components/MatchedFace/index.tsx:48
+msgid "Primary photo"
+msgstr ""
+
+#: assets-dev/src/components/MatchedFace/index.tsx:52
+#. 1: similarity
+msgid "Similarity: %1$d%%"
+msgstr ""
+
+#: assets-dev/src/components/PhotoPreview/index.tsx:10
+msgid "Face to search"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:108
+msgid "IDentigraF: Search by Photo"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:113
+msgid "Photo"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:133
+msgid "Submit"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:67
+msgid "Failed to upload the file"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:71
+msgid "Request has timed out"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:75
+msgid "Upload aborted"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:86
+msgid "Unexpected authentication error"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:91
+msgid "Unknown error while analyzing the server response"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/index.tsx:107
+msgid "Loading…"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/index.tsx:116
+msgid "Error loading captured faces"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/index.tsx:129
+#. 1: face number
+msgid "Face %d"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/index.tsx:156
+msgid "Search Results"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/index.tsx:162
+msgid "Unfortunately, the system has failed to recognize any face on the photo."
+msgstr ""
+
+#: assets-dev/src/components/WaitForm/index.tsx:10
+msgid "Please wait…"
+msgstr ""
+
+#: assets-dev/src/components/WaitForm/index.tsx:8
+msgid "Processing the request"
+msgstr ""

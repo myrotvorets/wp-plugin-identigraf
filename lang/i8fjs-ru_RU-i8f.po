@@ -1,0 +1,122 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: IDentigraF 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
+"POT-Creation-Date: 2021-09-19T09:45:50+03:00\n"
+"PO-Revision-Date: 2021-09-18T18:12:39+03:00\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: i8fjs\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: assets-dev/src/api/index.ts:16
+msgid "Error getting the authentication token"
+msgstr "Ошибка при получении токена аутентификации"
+
+#: assets-dev/src/api/index.ts:55
+msgid "Error communicating with the server"
+msgstr "Ошибка соединения с сервером"
+
+#: assets-dev/src/components/CapturedFace/index.tsx:10
+msgid "Recognized face"
+msgstr "Распознанное лицо"
+
+#. 1: min similarity, 2: max similarity
+#: assets-dev/src/components/CapturedFace/index.tsx:13
+msgid "%1$d…%2$d"
+msgstr "%1$d…%2$d"
+
+#: assets-dev/src/components/MatchedFace/index.tsx:29
+msgid "Unknown person"
+msgstr "Неизвестная личность"
+
+#: assets-dev/src/components/MatchedFace/index.tsx:34
+msgid "Face"
+msgstr "Лицо"
+
+#. 1: country name
+#: assets-dev/src/components/MatchedFace/index.tsx:37
+msgid "Country: %s"
+msgstr "Страна: %s"
+
+#: assets-dev/src/components/MatchedFace/index.tsx:41
+msgid "Matched photo"
+msgstr "Совпавшая фотография"
+
+#: assets-dev/src/components/MatchedFace/index.tsx:48
+msgid "Primary photo"
+msgstr "Основная фотография"
+
+#. 1: similarity
+#: assets-dev/src/components/MatchedFace/index.tsx:52
+msgid "Similarity: %1$d%%"
+msgstr "Сходство: %1$d%%"
+
+#: assets-dev/src/components/PhotoPreview/index.tsx:10
+msgid "Face to search"
+msgstr "Искомое лицо"
+
+#: assets-dev/src/components/SearchForm/index.tsx:108
+msgid "IDentigraF: Search by Photo"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm/index.tsx:113
+msgid "Photo"
+msgstr "Фотография"
+
+#: assets-dev/src/components/SearchForm/index.tsx:133
+msgid "Submit"
+msgstr "Отправить"
+
+#: assets-dev/src/components/SearchForm/index.tsx:67
+msgid "Failed to upload the file"
+msgstr "Не удалось загрузить файл"
+
+#: assets-dev/src/components/SearchForm/index.tsx:71
+msgid "Request has timed out"
+msgstr "Время ожидания запроса истекло"
+
+#: assets-dev/src/components/SearchForm/index.tsx:75
+msgid "Upload aborted"
+msgstr "Загрузка прервана"
+
+#: assets-dev/src/components/SearchForm/index.tsx:86
+msgid "Unexpected authentication error"
+msgstr "Неожиданная ошибка аутентификации"
+
+#: assets-dev/src/components/SearchForm/index.tsx:91
+msgid "Unknown error while analyzing the server response"
+msgstr "Неизвестная ошибка при анализе ответа сервера"
+
+#: assets-dev/src/components/SearchResults/index.tsx:107
+msgid "Loading…"
+msgstr "Загрузка…"
+
+#: assets-dev/src/components/SearchResults/index.tsx:116
+msgid "Error loading captured faces"
+msgstr "Ошибка загрузки распознанных лиц"
+
+#. 1: face number
+#: assets-dev/src/components/SearchResults/index.tsx:129
+msgid "Face %d"
+msgstr "Лицо %d"
+
+#: assets-dev/src/components/SearchResults/index.tsx:156
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: assets-dev/src/components/SearchResults/index.tsx:162
+msgid ""
+"Unfortunately, the system has failed to recognize any face on the photo."
+msgstr ""
+"К сожалению, системе не удалось распознать ни одного лица на фотографии."
+
+#: assets-dev/src/components/WaitForm/index.tsx:10
+msgid "Please wait…"
+msgstr "Пожалуйста, подождите…"
+
+#: assets-dev/src/components/WaitForm/index.tsx:8
+msgid "Processing the request"
+msgstr "Обработка запроса"

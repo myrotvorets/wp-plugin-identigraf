@@ -1,0 +1,54 @@
+# Copyright (C) 2021 Myrotvorets
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: IDentigraF 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-09-19T11:52:41+03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: i8fa\n"
+
+#. Plugin Name of the plugin
+#: inc/class-admin.php:33
+#: inc/class-admin.php:34
+msgid "IDentigraF"
+msgstr ""
+
+#. Description of the plugin
+msgid "IDentigraF integration for WP"
+msgstr ""
+
+#. Author of the plugin
+msgid "Myrotvorets"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://myrotvorets.center/"
+msgstr ""
+
+#: inc/class-admin.php:33
+msgid "IDentigraF Settings"
+msgstr ""
+
+#: inc/class-admin.php:34
+#: inc/class-admin.php:36
+msgid "Search"
+msgstr ""
+
+#: inc/class-admin.php:81
+msgid "Settings"
+msgstr ""
+
+#: inc/class-adminsettings.php:44
+msgid "API Endpoint"
+msgstr ""
+
+#: inc/class-adminsettings.php:58
+msgid "JWT Secret"
+msgstr ""

@@ -1,0 +1,24 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "processor": "disable/disable",
+    "plugins": ["disable"],
+    "parserOptions": {
+        "project": ["./tsconfig.json"]
+    },
+    "extends": [
+        "@myrotvorets/myrotvorets-ts",
+        "plugin:@wordpress/eslint-plugin/recommended-with-formatting"
+    ],
+    "rules": {
+        "no-invalid-this": "off",
+        "no-unused-vars": "off",
+        "no-use-before-define": "off"
+    },
+    "env": {
+        "browser": true
+    },
+    "settings": {
+        "disable/plugins": ["prettier"]
+    }
+}
