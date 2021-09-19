@@ -51,7 +51,13 @@ final class Admin {
 		if ( $hook === $this->search_slug ) {
 			wp_enqueue_style( 'i8f-bootstrap', plugins_url( 'assets/bootstrap.min.css', __DIR__ ), [], '5.1.1' );
 			wp_enqueue_style( 'i8f-lightbox', plugins_url( 'assets/lightbox.min.css', __DIR__ ), [], '5.1.4' );
-			wp_enqueue_script( 'i8f', plugins_url( 'assets/search.min.js', __DIR__ ), [ 'react', 'react-dom', 'wp-api-fetch', 'wp-i18n' ], '1', true );
+			wp_enqueue_script(
+				'i8f',
+				plugins_url( 'assets/search.min.js', __DIR__ ),
+				[ 'react', 'react-dom', 'wp-api-fetch', 'wp-i18n' ],
+				(string) filemtime( __DIR__ . '/../assets/search.min.js' ),
+				true
+			);
 			wp_localize_script( 'i8f', 'i8f', [
 				'endpoint' => Settings::instance()->get_endpoint(),
 				'title'    => get_admin_page_title(),
