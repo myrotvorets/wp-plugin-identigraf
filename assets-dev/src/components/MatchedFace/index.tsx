@@ -21,7 +21,7 @@ export default class MatchedFace extends Component<Props, unknown> {
 		return (
 			<>
 				<a
-					href={ link ?? '#' }
+					href={ link ? link.replace( 'https://myrotvorets.center', self.i8f.baseurl ) : '#' }
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-danger fw-bold text-decoration-none fs-3"

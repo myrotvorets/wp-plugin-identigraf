@@ -55,6 +55,7 @@ final class Admin {
 			wp_localize_script( 'i8f', 'i8f', [
 				'endpoint' => Settings::instance()->get_endpoint(),
 				'title'    => get_admin_page_title(),
+				'baseurl'  => defined( 'PSB_PRIMARY_DOMAIN' ) ? get_bloginfo( 'url' ) : 'https://myrotvorets.center',
 			] );
 			wp_set_script_translations( 'i8f', 'i8fjs', plugin_dir_path( dirname( __DIR__ ) . '/index.php' ) . '/lang' );
 		}
