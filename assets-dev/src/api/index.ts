@@ -1,5 +1,5 @@
 import apiFetch from '@wordpress/api-fetch';
-import { __, _nx } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import type { CompareStatusResponse, ErrorResponse, MatchedFacesResponse, SearchStatusResponse } from './types';
 export * from './errors';
 export * from './types';
