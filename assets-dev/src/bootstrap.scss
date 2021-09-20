@@ -31,7 +31,7 @@
     // @import "../../node_modules/bootstrap/scss/modal";
     // @import "../../node_modules/bootstrap/scss/tooltip";
     // @import "../../node_modules/bootstrap/scss/popover";
-    // @import "../../node_modules/bootstrap/scss/carousel";
+    @import "../../node_modules/bootstrap/scss/carousel";
     @import "../../node_modules/bootstrap/scss/spinners";
     // @import "../../node_modules/bootstrap/scss/offcanvas";
     // @import "../../node_modules/bootstrap/scss/placeholders";
@@ -43,6 +43,28 @@
         margin-top: 0;
         padding: 0;
         max-width: 100%;
+    }
+
+    .carousel {
+        .carousel-inner {
+            height: 100%;
+        }
+
+        .carousel-item {
+            position: static;
+        }
+
+        .carousel-caption, .carousel-inner {
+            background-color: #00000080;
+        }
+
+        .carousel-caption {
+            padding-top: .25em;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: #000;
+        }
     }
 
     margin: 0;

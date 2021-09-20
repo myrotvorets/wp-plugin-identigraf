@@ -10,6 +10,7 @@ const config: webpack.Configuration = {
 	context: path.resolve( __dirname, '..' ),
 	entry: {
 		search: path.resolve( __dirname, '../src/search.tsx' ),
+		compare: path.resolve( __dirname, '../src/compare.tsx' ),
 		bootstrap: path.resolve( __dirname, '../src/bootstrap.scss' ),
 		lightbox: require.resolve( 'react-image-lightbox/style.css' ),
 	},

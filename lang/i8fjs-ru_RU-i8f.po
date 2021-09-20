@@ -11,11 +11,27 @@ msgstr ""
 "X-Domain: i8fjs\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: assets-dev/src/api/errors.ts:5
+msgid "Authorization failed."
+msgstr "Ошибка авторизации."
+
+#: assets-dev/src/api/errors.ts:6
+msgid "Not authorized to perform this action."
+msgstr "Для выполнения данного действия требуется авторизация."
+
+#: assets-dev/src/api/errors.ts:8
+msgid "Error communicating with the server."
+msgstr "Ошибка соединения с сервером."
+
+#: assets-dev/src/api/errors.ts:9
+msgid "Unknown error."
+msgstr "Неизвестная ошибка."
+
 #: assets-dev/src/api/index.ts:16
 msgid "Error getting the authentication token"
 msgstr "Ошибка при получении токена аутентификации"
 
-#: assets-dev/src/api/index.ts:55
+#: assets-dev/src/api/index.ts:52
 msgid "Error communicating with the server"
 msgstr "Ошибка соединения с сервером"
 
@@ -27,6 +43,66 @@ msgstr "Распознанное лицо"
 #: assets-dev/src/components/CapturedFace/index.tsx:13
 msgid "%1$d…%2$d%%"
 msgstr "%1$d…%2$d%%"
+
+#: assets-dev/src/components/CompareForm/index.tsx:118
+#: assets-dev/src/components/CompareResults/index.tsx:104
+msgid "Compared photo"
+msgstr "Сравниваемая фотография"
+
+#: assets-dev/src/components/CompareForm/index.tsx:130
+msgid "Reference photos (up to 10 files)"
+msgstr "Эталонные фотографии (до 10 файлов)"
+
+#: assets-dev/src/components/CompareForm/index.tsx:146
+#: assets-dev/src/components/SearchForm/index.tsx:131
+msgid "Submit"
+msgstr "Отправить"
+
+#: assets-dev/src/components/CompareForm/index.tsx:73
+#: assets-dev/src/components/SearchForm/index.tsx:67
+msgid "Failed to upload the file"
+msgstr "Не удалось загрузить файл"
+
+#: assets-dev/src/components/CompareForm/index.tsx:77
+#: assets-dev/src/components/SearchForm/index.tsx:71
+msgid "Request has timed out"
+msgstr "Время ожидания запроса истекло"
+
+#: assets-dev/src/components/CompareForm/index.tsx:81
+#: assets-dev/src/components/SearchForm/index.tsx:75
+msgid "Upload aborted"
+msgstr "Загрузка прервана"
+
+#: assets-dev/src/components/CompareForm/index.tsx:93
+#: assets-dev/src/components/SearchForm/index.tsx:86
+msgid "Unexpected authentication error"
+msgstr "Неожиданная ошибка аутентификации"
+
+#: assets-dev/src/components/CompareForm/index.tsx:98
+#: assets-dev/src/components/SearchForm/index.tsx:91
+msgid "Unknown error while analyzing the server response"
+msgstr "Неизвестная ошибка при анализе ответа сервера"
+
+#. 1: photo number
+#: assets-dev/src/components/CompareResults/index.tsx:76
+msgid "Photo %1$d"
+msgstr "Фотография %1$d"
+
+#: assets-dev/src/components/CompareResults/index.tsx:79
+msgid "Similarity:"
+msgstr "Сходство:"
+
+#: assets-dev/src/components/CompareResults/index.tsx:89
+msgid "Comparison Results"
+msgstr "Результаты сравнения"
+
+#: assets-dev/src/components/CompareResults/index.tsx:93
+msgid ""
+"Unfortunately, the system has failed to recognize any face, or the photo "
+"contains multiple faces"
+msgstr ""
+"К сожалению, системе не удалось распознать ни одного лица на фотографии, "
+"либо на фотографии несколько лиц."
 
 #: assets-dev/src/components/MatchedFace/index.tsx:29
 msgid "Unknown person"
@@ -62,48 +138,24 @@ msgstr "Искомое лицо"
 msgid "Photo"
 msgstr "Фотография"
 
-#: assets-dev/src/components/SearchForm/index.tsx:131
-msgid "Submit"
-msgstr "Отправить"
-
-#: assets-dev/src/components/SearchForm/index.tsx:67
-msgid "Failed to upload the file"
-msgstr "Не удалось загрузить файл"
-
-#: assets-dev/src/components/SearchForm/index.tsx:71
-msgid "Request has timed out"
-msgstr "Время ожидания запроса истекло"
-
-#: assets-dev/src/components/SearchForm/index.tsx:75
-msgid "Upload aborted"
-msgstr "Загрузка прервана"
-
-#: assets-dev/src/components/SearchForm/index.tsx:86
-msgid "Unexpected authentication error"
-msgstr "Неожиданная ошибка аутентификации"
-
-#: assets-dev/src/components/SearchForm/index.tsx:91
-msgid "Unknown error while analyzing the server response"
-msgstr "Неизвестная ошибка при анализе ответа сервера"
-
-#: assets-dev/src/components/SearchResults/index.tsx:107
+#: assets-dev/src/components/SearchResults/index.tsx:110
 msgid "Loading…"
 msgstr "Загрузка…"
 
-#: assets-dev/src/components/SearchResults/index.tsx:116
+#: assets-dev/src/components/SearchResults/index.tsx:119
 msgid "Error loading captured faces"
 msgstr "Ошибка загрузки распознанных лиц"
 
 #. 1: face number
-#: assets-dev/src/components/SearchResults/index.tsx:129
+#: assets-dev/src/components/SearchResults/index.tsx:132
 msgid "Face %d"
 msgstr "Лицо %d"
 
-#: assets-dev/src/components/SearchResults/index.tsx:156
+#: assets-dev/src/components/SearchResults/index.tsx:159
 msgid "Search Results"
 msgstr "Результаты поиска"
 
-#: assets-dev/src/components/SearchResults/index.tsx:162
+#: assets-dev/src/components/SearchResults/index.tsx:165
 msgid ""
 "Unfortunately, the system has failed to recognize any face on the photo."
 msgstr ""

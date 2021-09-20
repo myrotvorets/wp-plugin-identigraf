@@ -3,6 +3,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: assets-dev/src/api/errors.ts:5
+msgid "Authorization failed."
+msgstr ""
+
+#: assets-dev/src/api/errors.ts:6
+msgid "Not authorized to perform this action."
+msgstr ""
+
+#: assets-dev/src/api/errors.ts:8
+msgid "Error communicating with the server."
+msgstr ""
+
+#: assets-dev/src/api/errors.ts:9
+msgid "Unknown error."
+msgstr ""
+
 #: assets-dev/src/api/index.ts:16
 msgid "Error getting the authentication token"
 msgstr ""
@@ -18,6 +34,64 @@ msgstr ""
 #: assets-dev/src/components/CapturedFace/index.tsx:13
 #. 1: min similarity, 2: max similarity
 msgid "%1$d…%2$d%%"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:118
+#: assets-dev/src/components/CompareResults/index.tsx:104
+msgid "Compared photo"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:130
+msgid "Reference photos (up to 10 files)"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:146
+#: assets-dev/src/components/SearchForm/index.tsx:131
+msgid "Submit"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:73
+#: assets-dev/src/components/SearchForm/index.tsx:67
+msgid "Failed to upload the file"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:77
+#: assets-dev/src/components/SearchForm/index.tsx:71
+msgid "Request has timed out"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:81
+#: assets-dev/src/components/SearchForm/index.tsx:75
+msgid "Upload aborted"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:93
+#: assets-dev/src/components/SearchForm/index.tsx:86
+msgid "Unexpected authentication error"
+msgstr ""
+
+#: assets-dev/src/components/CompareForm/index.tsx:98
+#: assets-dev/src/components/SearchForm/index.tsx:91
+msgid "Unknown error while analyzing the server response"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/index.tsx:76
+#. 1: photo number
+msgid "Photo %1$d"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/index.tsx:79
+msgid "Similarity:"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/index.tsx:89
+msgid "Comparison Results"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/index.tsx:93
+msgid ""
+"Unfortunately, the system has failed to recognize any face, or the photo "
+"contains multiple faces"
 msgstr ""
 
 #: assets-dev/src/components/MatchedFace/index.tsx:29
@@ -52,30 +126,6 @@ msgstr ""
 
 #: assets-dev/src/components/SearchForm/index.tsx:111
 msgid "Photo"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:131
-msgid "Submit"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:67
-msgid "Failed to upload the file"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:71
-msgid "Request has timed out"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:75
-msgid "Upload aborted"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:86
-msgid "Unexpected authentication error"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:91
-msgid "Unknown error while analyzing the server response"
 msgstr ""
 
 #: assets-dev/src/components/SearchResults/index.tsx:110

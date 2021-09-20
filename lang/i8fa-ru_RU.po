@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IDentigraF 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
-"POT-Creation-Date: 2021-09-19T18:30:04+03:00\n"
+"POT-Creation-Date: 2021-09-20T19:28:43+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Domain: i8fa\n"
 
 #. Plugin Name of the plugin
-#: inc/class-admin.php:33 inc/class-admin.php:34
+#: inc/class-admin.php:36 inc/class-admin.php:37
 msgid "IDentigraF"
 msgstr "IDentigraF"
 
@@ -36,19 +36,27 @@ msgstr "Myrotvorets"
 msgid "https://myrotvorets.center/"
 msgstr "https://myrotvorets.center/"
 
-#: inc/class-admin.php:33
+#: inc/class-admin.php:36
 msgid "IDentigraF Settings"
 msgstr "IDentigraF: настройки"
 
-#: inc/class-admin.php:34 inc/class-admin.php:36
+#: inc/class-admin.php:37 inc/class-admin.php:39
 msgid "Search by Photo"
 msgstr "Поиск по фотографии"
 
-#: inc/class-admin.php:36
+#: inc/class-admin.php:39
 msgid "Search"
 msgstr "Поиск"
 
-#: inc/class-admin.php:89
+#: inc/class-admin.php:40
+msgid "Compare Faces"
+msgstr "Сравнение лиц"
+
+#: inc/class-admin.php:40
+msgid "Compare"
+msgstr "Сравнение"
+
+#: inc/class-admin.php:98
 msgid "Settings"
 msgstr "Настройки"
 

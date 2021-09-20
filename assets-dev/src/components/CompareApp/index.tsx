@@ -2,16 +2,16 @@ import React, { Component, ReactNode } from 'react';
 import { Alert, Container, Spinner } from 'react-bootstrap';
 import { Link, Route, HashRouter as Router, Switch } from 'react-router-dom';
 import { AppContext, Context } from '../../context';
-import SearchForm from '../SearchForm';
-import SearchResults from '../SearchResults';
-import API from '../../api/index';
+import CompareForm from '../CompareForm';
+import CompareResults from '../CompareResults';
+import API from '../../api';
 
 interface State {
 	ctx: Context;
 	error: null | string;
 }
 
-export default class Application extends Component<unknown, State> {
+export default class CompareApp extends Component<unknown, State> {
 	public state: Readonly<State> = {
 		error: null,
 		ctx: {
@@ -52,11 +52,11 @@ export default class Application extends Component<unknown, State> {
 						<AppContext.Provider value={ ctx }>
 							<Switch>
 								<Route
-									path="/search/:guid"
-									render={ ( props ): ReactNode => <SearchResults guid={ props.match.params.guid } /> }
+									path="/compare/:guid"
+									render={ ( props ): ReactNode => <CompareResults guid={ props.match.params.guid } /> }
 								/>
 								<Route path="/" exact>
-									<SearchForm />
+									<CompareForm />
 								</Route>
 							</Switch>
 						</AppContext.Provider>
