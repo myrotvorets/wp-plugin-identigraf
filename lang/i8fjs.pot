@@ -37,7 +37,7 @@ msgid "%1$d…%2$d%%"
 msgstr ""
 
 #: assets-dev/src/components/CompareForm/index.tsx:118
-#: assets-dev/src/components/CompareResults/index.tsx:104
+#: assets-dev/src/components/CompareResults/index.tsx:99
 msgid "Compared photo"
 msgstr ""
 

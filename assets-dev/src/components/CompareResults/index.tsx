@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from 'react';
-import { Alert, Card, Carousel, Figure } from 'react-bootstrap';
+import { Alert, Card, Carousel } from 'react-bootstrap';
 import { __, sprintf } from '@wordpress/i18n';
 import API, { decodeErrorResponse } from '../../api';
 import WaitForm from '../WaitForm';
@@ -93,17 +93,12 @@ export default class CompareResults extends Component<Props, State> {
 						<Card.Text className="text-danger">{ __( 'Unfortunately, the system has failed to recognize any face, or the photo contains multiple faces', 'i8fjs' ) }</Card.Text>
 					) }
 
-					<Figure className="d-block text-center">
-						<Figure.Image
-							className="img-fluid"
-							src={ `https://api2.myrotvorets.center/identigraf-upload/v1/get/${ guid }/0` }
-							alt=""
-							style={ { maxHeight: '40vh' } }
-						/>
-						<Figure.Caption className="text-center fw-bold">
-							{ __( 'Compared photo', 'i8fjs' ) }
-						</Figure.Caption>
-					</Figure>
+					<img
+						className="img-fluid d-block mx-auto mb-3"
+						src={ `https://api2.myrotvorets.center/identigraf-upload/v1/get/${ guid }/0` }
+						alt={ __( 'Compared photo', 'i8fjs' ) }
+						style={ { maxHeight: '40vh' } }
+					/>
 
 					<Carousel interval={ null } fade style={ { height: '45vh' } }>
 						{ results.map( this._renderPhoto ) }

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IDentigraF 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
-"POT-Creation-Date: 2021-09-20T19:28:43+03:00\n"
+"POT-Creation-Date: 2021-09-20T20:08:08+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,7 @@ msgstr "Сравнение лиц"
 msgid "Compare"
 msgstr "Сравнение"
 
-#: inc/class-admin.php:98
+#: inc/class-admin.php:106
 msgid "Settings"
 msgstr "Настройки"
 

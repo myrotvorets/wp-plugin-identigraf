@@ -59,9 +59,9 @@ final class Admin {
 
 			wp_enqueue_script(
 				'i8f-rtl',
-				plugins_url( "assets/rtl.min.js", __DIR__ ),
+				plugins_url( 'assets/rtl.min.js', __DIR__ ),
 				[ 'react', 'react-dom', 'wp-api-fetch', 'wp-i18n' ],
-				(string) filemtime( __DIR__ . "/../assets/rtl.min.js" ),
+				(string) filemtime( __DIR__ . '/../assets/rtl.min.js' ),
 				true
 			);
 
