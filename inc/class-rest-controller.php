@@ -8,7 +8,7 @@ use WP_Error;
 use WP_REST_Response;
 use WP_REST_Server;
 
-final class REST_Controller /* NO SONAR */ {
+final class REST_Controller /* NOSONAR */ {
 	use Singleton;
 
 	const NAMESPACE = 'identigraf/v2';

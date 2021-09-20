@@ -1,6 +1,6 @@
 import React, { Component, ReactNode } from 'react';
 import { Alert, Container, Spinner } from 'react-bootstrap';
-import { Route, HashRouter as Router, Switch } from 'react-router-dom';
+import { Link, Route, HashRouter as Router, Switch } from 'react-router-dom';
 import { AppContext, Context } from '../../context';
 import SearchForm from '../SearchForm';
 import SearchResults from '../SearchResults';
@@ -44,12 +44,12 @@ export default class Application extends Component<unknown, State> {
 	public render(): ReactNode {
 		const { ctx, error } = this.state;
 		return (
-			<Container className="p-3 my-3">
-				<h1>{ self.i8f.title }</h1>
-				{ error && <Alert variant="danger">{ error }</Alert> }
-				{ ctx.token ? (
-					<AppContext.Provider value={ ctx }>
-						<Router>
+			<Container>
+				<Router>
+					<h1 className="h2"><Link to="/" className="text-decoration-none">{ self.i8f.title }</Link></h1>
+					{ error && <Alert variant="danger">{ error }</Alert> }
+					{ ctx.token ? (
+						<AppContext.Provider value={ ctx }>
 							<Switch>
 								<Route
 									path="/search/:guid"
@@ -59,11 +59,11 @@ export default class Application extends Component<unknown, State> {
 									<SearchForm />
 								</Route>
 							</Switch>
-						</Router>
-					</AppContext.Provider>
-				) : (
-					<Spinner animation="border" variant="primary" />
-				) }
+						</AppContext.Provider>
+					) : (
+						<Spinner animation="border" variant="primary" />
+					) }
+				</Router>
 			</Container>
 		);
 	}
