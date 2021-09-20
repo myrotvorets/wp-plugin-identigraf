@@ -54,7 +54,7 @@ final class Admin {
 	 */
 	public function admin_enqueue_scripts( $hook ): void {
 		if ( $hook === $this->search_slug || $hook === $this->compare_slug ) {
-			wp_enqueue_style( 'i8f-bootstrap', plugins_url( 'assets/bootstrap.min.css', __DIR__ ), [], '5.1.1' );
+			wp_enqueue_style( 'i8f-bootstrap', plugins_url( 'assets/bootstrap.min.css', __DIR__ ), [], '5.1.1-' . (string) filemtime( __DIR__ . '/../assets/bootstrap.min.css' ) );
 			wp_enqueue_style( 'i8f-lightbox', plugins_url( 'assets/lightbox.min.css', __DIR__ ), [], '5.1.4' );
 
 			wp_enqueue_script(
