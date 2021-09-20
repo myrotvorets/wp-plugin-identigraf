@@ -2,9 +2,10 @@ import React, { ChangeEvent, Component, FormEvent, ReactNode } from 'react';
 import { Alert, Button, Col, Form, Row } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
-import API, { ErrorResponse, SearchUploadResponse, decodeErrorResponse } from '../../api';
+import { ErrorResponse, SearchUploadResponse, decodeErrorResponse } from '../../api';
 import PhotoPreview from '../PhotoPreview';
 import UploadProgress from '../UploadProgress';
+import { AppContext } from '../../context';
 
 interface State {
 	image: string;
@@ -20,6 +21,9 @@ export default class SearchForm extends Component<unknown, State> {
 		error: null,
 		guid: null,
 	};
+
+	public static contextType = AppContext;
+	declare public context: React.ContextType<typeof AppContext>;
 
 	private readonly _onFileChange = ( { currentTarget }: ChangeEvent<HTMLInputElement> ): void => {
 		this.setState( { error: null } );
@@ -37,25 +41,21 @@ export default class SearchForm extends Component<unknown, State> {
 		}
 	};
 
-	private readonly _onFormSubmit = async ( event: FormEvent<HTMLFormElement> ): Promise<void> => {
+	private readonly _onFormSubmit = ( event: FormEvent<HTMLFormElement> ): void => {
 		event.preventDefault();
 		const data = new FormData( event.currentTarget );
 		this.setState( { uploadProgress: 0, error: null } );
 
-		try {
-			const token = await API.getApiToken();
-			const req = new XMLHttpRequest();
-			req.upload.addEventListener( 'progress', this._onUploadProgress );
-			req.addEventListener( 'error', this._onUploadFailed );
-			req.addEventListener( 'abort', this._onUploadAborted );
-			req.addEventListener( 'timeout', this._onUploadTimeout );
-			req.addEventListener( 'load', this._onUploadSucceeded );
-			req.open( 'POST', 'https://api2.myrotvorets.center/identigraf/v2/search' );
-			req.setRequestHeader( 'Authorization', `Bearer ${ token }` );
-			req.send( data );
-		} catch ( err ) {
-			this._setError( ( err as Error ).message );
-		}
+		const token = this.context.token;
+		const req = new XMLHttpRequest();
+		req.upload.addEventListener( 'progress', this._onUploadProgress );
+		req.addEventListener( 'error', this._onUploadFailed );
+		req.addEventListener( 'abort', this._onUploadAborted );
+		req.addEventListener( 'timeout', this._onUploadTimeout );
+		req.addEventListener( 'load', this._onUploadSucceeded );
+		req.open( 'POST', 'https://api2.myrotvorets.center/identigraf/v2/search' );
+		req.setRequestHeader( 'Authorization', `Bearer ${ token }` );
+		req.send( data );
 	};
 
 	private readonly _onUploadProgress = ( e: ProgressEvent<XMLHttpRequestEventTarget> ): void => {

@@ -16,8 +16,3 @@ export function decodeErrorResponse( r: ErrorResponse ): string {
 	const error = errors[ r.code ];
 	return error ?? r.message;
 }
-
-export function decodeFirebaseError( code: string, message: string ): string {
-	const error = errors[ code ];
-	return error ?? message;
-}

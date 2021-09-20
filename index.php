@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: IDentigraF
- * Plugin URI: https://neuroi.identigraf.center/
+ * Plugin URI: https://neuro.identigraf.center/
  * Description: IDentigraF integration for WP
  * Version: 2.0.0
  * Author: Myrotvorets

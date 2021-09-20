@@ -17,6 +17,7 @@ module.exports = function(api) {
       ],
     ],
     "plugins": [
+      ["@babel/plugin-transform-typescript", { "allowDeclareFields": true }],
       ["@babel/plugin-transform-react-jsx"],
       ["@babel/plugin-proposal-class-properties", { "loose": true }],
       ["@babel/plugin-proposal-optional-chaining", { "loose": true }],

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IDentigraF 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
-"POT-Creation-Date: 2021-09-19T17:53:31+03:00\n"
+"POT-Creation-Date: 2021-09-19T18:30:04+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 #: inc/class-admin.php:33 inc/class-admin.php:34
 msgid "IDentigraF"
 msgstr "IDentigraF"
+
+#. Plugin URI of the plugin
+msgid "https://neuro.identigraf.center/"
+msgstr "https://neuro.identigraf.center/"
 
 #. Description of the plugin
 msgid "IDentigraF integration for WP"
@@ -44,7 +48,7 @@ msgstr "Поиск по фотографии"
 msgid "Search"
 msgstr "Поиск"
 
-#: inc/class-admin.php:82
+#: inc/class-admin.php:89
 msgid "Settings"
 msgstr "Настройки"
 

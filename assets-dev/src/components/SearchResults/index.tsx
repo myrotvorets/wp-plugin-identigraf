@@ -6,6 +6,7 @@ import API, { MatchedFace as FoundFace, CapturedFace as RecognizedFace, decodeEr
 import CapturedFace from '../CapturedFace';
 import MatchedFace from '../MatchedFace';
 import WaitForm from '../WaitForm';
+import { AppContext } from '../../context';
 
 interface Props {
 	guid: string;
@@ -30,14 +31,17 @@ export default class SearchResults extends Component<Props, State> {
 		lightbox: null,
 	};
 
-	private _timerId: number | null = null;
+	public static contextType = AppContext;
+	declare public context: React.ContextType<typeof AppContext>;
+
+	private _timerId = 0;
 
 	public componentDidMount(): void {
 		this._timerId = self.setTimeout( this._checkStatus, 0 );
 	}
 
 	public componentWillUnmount(): void {
-		if ( this._timerId !== null ) {
+		if ( this._timerId !== 0 ) {
 			self.clearTimeout( this._timerId );
 		}
 	}
@@ -51,13 +55,12 @@ export default class SearchResults extends Component<Props, State> {
 	};
 
 	private readonly _checkStatus = (): void => {
-		this._timerId = null;
+		this._timerId = 0;
 
 		const { guid } = this.props;
 
 		/* checkSearchStatus() cannot fail */
-		// eslint-disable-next-line no-void
-		void API.checkSearchStatus( guid ).then( ( r ) => {
+		void API.checkSearchStatus( guid, this.context.token ).then( ( r ) => {
 			if ( r.success ) {
 				if ( r.status === 'inprogress' ) {
 					this._timerId = self.setTimeout( this._checkStatus, 2_000 );
@@ -80,7 +83,7 @@ export default class SearchResults extends Component<Props, State> {
 		const { guid } = this.props;
 		const { capturedFaces } = this.state;
 
-		Promise.all( capturedFaces.map( ( { faceID } ) => API.getMatchedFaces( guid, faceID ) ) )
+		Promise.all( capturedFaces.map( ( { faceID } ) => API.getMatchedFaces( guid, faceID, this.context.token ) ) )
 			.then( ( responses ) => {
 				responses.forEach( ( response ) => this._addMatches( response.success ? response.matches : null ) );
 				return this.setState( { state: 'done' } );

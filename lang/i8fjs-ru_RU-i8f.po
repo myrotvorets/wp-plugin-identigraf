@@ -25,8 +25,8 @@ msgstr "Распознанное лицо"
 
 #. 1: min similarity, 2: max similarity
 #: assets-dev/src/components/CapturedFace/index.tsx:13
-msgid "%1$d…%2$d"
-msgstr "%1$d…%2$d"
+msgid "%1$d…%2$d%%"
+msgstr "%1$d…%2$d%%"
 
 #: assets-dev/src/components/MatchedFace/index.tsx:29
 msgid "Unknown person"

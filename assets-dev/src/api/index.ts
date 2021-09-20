@@ -17,26 +17,23 @@ export default class API {
 			} );
 	}
 
-	public static checkCompareStatus( guid: string ): Promise<CompareStatusResponse | ErrorResponse> {
-		return API.get( `/compare/${ guid }` );
+	public static checkCompareStatus( guid: string, token: string ): Promise<CompareStatusResponse | ErrorResponse> {
+		return API.get( `/compare/${ guid }`, token );
 	}
 
-	public static checkSearchStatus( guid: string ): Promise<SearchStatusResponse | ErrorResponse> {
-		return API.get( `/search/${ guid }` );
+	public static checkSearchStatus( guid: string, token: string ): Promise<SearchStatusResponse | ErrorResponse> {
+		return API.get( `/search/${ guid }`, token );
 	}
 
-	public static getMatchedFaces( guid: string, faceID: number ): Promise<MatchedFacesResponse | ErrorResponse> {
-		return API.get( `/search/${ guid }/matches/${ faceID }/0/20` );
+	public static getMatchedFaces( guid: string, faceID: number, token: string ): Promise<MatchedFacesResponse | ErrorResponse> {
+		return API.get( `/search/${ guid }/matches/${ faceID }/0/20`, token );
 	}
 
-	private static get<R>( endpoint: string, auth?: string ): Promise<R | ErrorResponse> {
+	private static get<R>( endpoint: string, auth: string ): Promise<R | ErrorResponse> {
 		const headers: Record<string, string> = {
 			Accept: 'application/json',
+			Authorization: `Bearer ${ auth }`,
 		};
-
-		if ( auth ) {
-			headers.Authorization = `Bearer ${ auth }`;
-		}
 
 		return API.fetch<R>( `${ self.i8f.endpoint }${ endpoint }`, { headers } );
 	}

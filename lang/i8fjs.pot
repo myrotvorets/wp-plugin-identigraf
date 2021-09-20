@@ -7,7 +7,7 @@ msgstr ""
 msgid "Error getting the authentication token"
 msgstr ""
 
-#: assets-dev/src/api/index.ts:55
+#: assets-dev/src/api/index.ts:52
 msgid "Error communicating with the server"
 msgstr ""
 
@@ -17,7 +17,7 @@ msgstr ""
 
 #: assets-dev/src/components/CapturedFace/index.tsx:13
 #. 1: min similarity, 2: max similarity
-msgid "%1$d…%2$d"
+msgid "%1$d…%2$d%%"
 msgstr ""
 
 #: assets-dev/src/components/MatchedFace/index.tsx:29
@@ -78,24 +78,24 @@ msgstr ""
 msgid "Unknown error while analyzing the server response"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:107
+#: assets-dev/src/components/SearchResults/index.tsx:110
 msgid "Loading…"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:116
+#: assets-dev/src/components/SearchResults/index.tsx:119
 msgid "Error loading captured faces"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:129
+#: assets-dev/src/components/SearchResults/index.tsx:132
 #. 1: face number
 msgid "Face %d"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:156
+#: assets-dev/src/components/SearchResults/index.tsx:159
 msgid "Search Results"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:162
+#: assets-dev/src/components/SearchResults/index.tsx:165
 msgid "Unfortunately, the system has failed to recognize any face on the photo."
 msgstr ""
 

@@ -3,7 +3,6 @@
         "target": "es2019",
         "module": "commonjs",
         "jsx": "react",
-        "outDir": "build",
         "sourceMap": false,
         "strict": true,
         "noUnusedLocals": true,
