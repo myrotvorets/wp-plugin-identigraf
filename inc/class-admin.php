@@ -57,11 +57,19 @@ final class Admin {
 			wp_enqueue_style( 'i8f-bootstrap', plugins_url( 'assets/bootstrap.min.css', __DIR__ ), [], '5.1.1' );
 			wp_enqueue_style( 'i8f-lightbox', plugins_url( 'assets/lightbox.min.css', __DIR__ ), [], '5.1.4' );
 
+			wp_enqueue_script(
+				'i8f-rtl',
+				plugins_url( "assets/rtl.min.js", __DIR__ ),
+				[ 'react', 'react-dom', 'wp-api-fetch', 'wp-i18n' ],
+				(string) filemtime( __DIR__ . "/../assets/rtl.min.js" ),
+				true
+			);
+
 			$script = $hook === $this->search_slug ? 'search' : 'compare';
 			wp_enqueue_script(
 				'i8f',
 				plugins_url( "assets/{$script}.min.js", __DIR__ ),
-				[ 'react', 'react-dom', 'wp-api-fetch', 'wp-i18n' ],
+				[ 'i8f-rtl' ],
 				(string) filemtime( __DIR__ . "/../assets/{$script}.min.js" ),
 				true
 			);

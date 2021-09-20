@@ -73,6 +73,15 @@ const config: webpack.Configuration = {
 	],
 	optimization: {
 		removeEmptyChunks: true,
+		splitChunks: {
+			cacheGroups: {
+				commons: {
+					test: /[\\/]node_modules[\\/]/u,
+					name: 'rtl',
+					chunks: 'all',
+				},
+			},
+		},
 	},
 };
 
