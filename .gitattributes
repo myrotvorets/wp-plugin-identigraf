@@ -8,3 +8,4 @@
 /lang/*.pot         export-ignore
 /lang/*.po          export-ignore
 /lang/Makefile      export-ignore
+/composer.lock      export-ignore
