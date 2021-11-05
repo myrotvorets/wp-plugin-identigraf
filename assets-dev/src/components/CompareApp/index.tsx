@@ -1,6 +1,6 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, ReactElement, ReactNode } from 'react';
 import { Alert, Container, Spinner } from 'react-bootstrap';
-import { Link, Route, HashRouter as Router, Switch } from 'react-router-dom';
+import { Link, Route, HashRouter as Router, Routes, useParams } from 'react-router-dom';
 import { AppContext, Context } from '../../context';
 import CompareForm from '../CompareForm';
 import CompareResults from '../CompareResults';
@@ -9,6 +9,11 @@ import API from '../../api';
 interface State {
 	ctx: Context;
 	error: null | string;
+}
+
+function CompareResultsRoute(): ReactElement {
+	const { guid } = useParams();
+	return <CompareResults guid={ guid as string } />;
 }
 
 export default class CompareApp extends Component<unknown, State> {
@@ -50,15 +55,10 @@ export default class CompareApp extends Component<unknown, State> {
 					{ error && <Alert variant="danger">{ error }</Alert> }
 					{ ctx.token ? (
 						<AppContext.Provider value={ ctx }>
-							<Switch>
-								<Route
-									path="/compare/:guid"
-									render={ ( props ): ReactNode => <CompareResults guid={ props.match.params.guid } /> }
-								/>
-								<Route path="/" exact>
-									<CompareForm />
-								</Route>
-							</Switch>
+							<Routes>
+								<Route path="/compare/:guid" element={ <CompareResultsRoute /> } />
+								<Route path="/" element={ <CompareForm /> } />
+							</Routes>
 						</AppContext.Provider>
 					) : (
 						<Spinner animation="border" variant="primary" />

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, Component, FormEvent, ReactNode } from 'react';
 import { Alert, Button, Col, Form, Row } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
 import { ErrorResponse, SearchUploadResponse, decodeErrorResponse } from '../../api';
 import PhotoPreview from '../PhotoPreview';
@@ -100,7 +100,7 @@ export default class SearchForm extends Component<unknown, State> {
 		const { error, guid, image, uploadProgress } = this.state;
 
 		if ( guid !== null ) {
-			return <Redirect to={ `/search/${ guid }` } />;
+			return <Navigate to={ `/search/${ guid }` } />;
 		}
 
 		return (

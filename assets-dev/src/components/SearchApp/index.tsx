@@ -1,6 +1,6 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, ReactElement, ReactNode } from 'react';
 import { Alert, Container, Spinner } from 'react-bootstrap';
-import { Link, Route, HashRouter as Router, Switch } from 'react-router-dom';
+import { Link, Route, HashRouter as Router, Routes, useParams } from 'react-router-dom';
 import { AppContext, Context } from '../../context';
 import SearchForm from '../SearchForm';
 import SearchResults from '../SearchResults';
@@ -9,6 +9,11 @@ import API from '../../api';
 interface State {
 	ctx: Context;
 	error: null | string;
+}
+
+function SearchResultsRoute(): ReactElement {
+	const { guid } = useParams();
+	return <SearchResults guid={ guid as string } />;
 }
 
 export default class SearchApp extends Component<unknown, State> {
@@ -50,15 +55,10 @@ export default class SearchApp extends Component<unknown, State> {
 					{ error && <Alert variant="danger">{ error }</Alert> }
 					{ ctx.token ? (
 						<AppContext.Provider value={ ctx }>
-							<Switch>
-								<Route
-									path="/search/:guid"
-									render={ ( props ): ReactNode => <SearchResults guid={ props.match.params.guid } /> }
-								/>
-								<Route path="/" exact>
-									<SearchForm />
-								</Route>
-							</Switch>
+							<Routes>
+								<Route path="/search/:guid" element={ <SearchResultsRoute /> } />
+								<Route path="/" element={ <SearchForm /> } />
+							</Routes>
 						</AppContext.Provider>
 					) : (
 						<Spinner animation="border" variant="primary" />

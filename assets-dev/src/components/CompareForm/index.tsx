@@ -1,6 +1,6 @@
 import React, { ChangeEvent, Component, FormEvent, ReactNode } from 'react';
 import { Alert, Button, Form } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
 import UploadProgress from '../UploadProgress';
 import { AppContext } from '../../context';
@@ -107,7 +107,7 @@ export default class CompareForm extends Component<unknown, State> {
 		const { error, guid, uploadProgress } = this.state;
 
 		if ( guid !== null ) {
-			return <Redirect to={ `/compare/${ guid }` } />;
+			return <Navigate to={ `/compare/${ guid }` } />;
 		}
 
 		return (

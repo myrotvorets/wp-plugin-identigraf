@@ -3,7 +3,6 @@ import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import path from 'path';
-import { TerserOptions } from 'terser-webpack-plugin/types';
 import commonConfig from './webpack.common';
 
 export default function(): webpack.Configuration {
@@ -54,7 +53,7 @@ export default function(): webpack.Configuration {
 		optimization: {
 			moduleIds: 'deterministic',
 			minimizer: [
-				new TerserPlugin<TerserOptions>( {
+				new TerserPlugin( {
 					terserOptions: {
 						output: {
 							comments: false,
