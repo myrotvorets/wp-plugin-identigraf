@@ -22,7 +22,7 @@ jobs:
           - "8.1"
         dependencies:
           - lowest
-          - highest
+          - locked
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2.4.0
@@ -31,9 +31,6 @@ jobs:
         uses: shivammathur/setup-php@2.16.0
         with:
           php-version: ${{ matrix.php }}
-
-      - name: Validate composer files
-        run: composer validate
 
       - name: Install Composer Dependencies
         uses: ramsey/composer-install@2.0.2
