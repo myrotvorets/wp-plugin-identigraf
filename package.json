@@ -6,7 +6,7 @@
     "dev": "webpack serve --hot -c assets-dev/webpack.config.ts",
     "build": "webpack --mode=production -c assets-dev/webpack.config.ts",
     "watch": "webpack watch --mode=development -c assets-dev/webpack.config.ts",
-    "lint": "eslint assets-dev"
+    "lint": "eslint -f gha assets-dev"
   },
   "keywords": [],
   "author": "Myrotvorets <support@myrotvorets.center> (https://myrotvorets.center/)",
