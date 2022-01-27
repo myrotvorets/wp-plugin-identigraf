@@ -12,7 +12,7 @@
   "author": "Myrotvorets <support@myrotvorets.center> (https://myrotvorets.center/)",
   "license": "MIT",
   "dependencies": {
-    "@wordpress/api-fetch": "^5.2.2",
+    "@wordpress/api-fetch": "^6.0.0",
     "@wordpress/i18n": "^4.2.2",
     "bootstrap": "^5.1.1",
     "react": "^17.0.2",
