@@ -12,7 +12,7 @@
   "author": "Myrotvorets <support@myrotvorets.center> (https://myrotvorets.center/)",
   "license": "MIT",
   "dependencies": {
-    "@wordpress/api-fetch": "^5.2.2",
+    "@wordpress/api-fetch": "^6.0.0",
     "@wordpress/i18n": "^4.2.2",
     "bootstrap": "^5.1.1",
     "react": "^17.0.2",
@@ -49,7 +49,7 @@
     "eslint-formatter-gha": "^1.2.0",
     "eslint-plugin-disable": "^2.0.1",
     "fibers": "^5.0.0",
-    "fork-ts-checker-webpack-plugin": "^6.1.0",
+    "fork-ts-checker-webpack-plugin": "^7.0.0",
     "mini-css-extract-plugin": "^2.0.0",
     "postcss": "^8.2.4",
     "postcss-loader": "^6.1.0",
