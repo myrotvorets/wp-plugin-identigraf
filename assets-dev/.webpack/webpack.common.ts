@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import webpackDevServer from 'webpack-dev-server';
 import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment
@@ -6,7 +7,7 @@ const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const config: webpack.Configuration = {
+const config: webpack.Configuration & { devServer: webpackDevServer.Configuration } = {
 	context: path.resolve( __dirname, '..' ),
 	entry: {
 		search: path.resolve( __dirname, '../src/search.tsx' ),

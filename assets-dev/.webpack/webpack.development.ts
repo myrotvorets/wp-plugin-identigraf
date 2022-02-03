@@ -21,10 +21,6 @@ export default function(): webpack.Configuration {
 				typescript: {
 					configFile: path.resolve( `${ __dirname }'/../../tsconfig.json` ),
 				},
-				eslint: {
-					enabled: true,
-					files: [ 'src/**/*.{ts,tsx}' ],
-				},
 			} ),
 		],
 	};
