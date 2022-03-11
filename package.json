@@ -39,7 +39,7 @@
     "@types/react-router-dom": "^5.1.9",
     "@types/webpack-dev-server": "^4.1.0",
     "@wordpress/babel-plugin-makepot": "^4.2.0",
-    "@wordpress/eslint-plugin": "^10.0.0",
+    "@wordpress/eslint-plugin": "^11.0.0",
     "autoprefixer": "^10.2.3",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
