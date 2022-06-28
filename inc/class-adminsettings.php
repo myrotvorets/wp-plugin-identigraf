@@ -50,6 +50,7 @@ final class AdminSettings {
 				'type'         => 'url',
 				'required'     => true,
 				'autocomplete' => 'off',
+				'class'        => 'regular-text',
 			]
 		);
 
@@ -67,6 +68,7 @@ final class AdminSettings {
 				'minlength'    => 64,
 				'maxlength'    => 64,
 				'spellcheck'   => false,
+				'class'        => 'regular-text',
 			]
 		);
 	}
