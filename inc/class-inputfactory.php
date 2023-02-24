@@ -70,7 +70,7 @@ final class InputFactory {
 	}
 
 	/**
-	 * @psalm-param HelpArgs $args
+	 * @psalm-param HelpArgs&mixed[] $args
 	 */
 	private static function render_help( array $args ): void {
 		if ( ! empty( $args['help'] ) ) {
