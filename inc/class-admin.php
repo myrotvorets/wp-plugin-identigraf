@@ -85,7 +85,7 @@ final class Admin {
 	}
 
 	public static function options_page(): void {
-		require __DIR__ . '/../views/options.php';
+		require __DIR__ . '/../views/options.php'; // NOSONAR
 	}
 
 	public function i8f_page(): void {

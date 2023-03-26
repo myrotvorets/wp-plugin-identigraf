@@ -94,28 +94,28 @@ msgid ""
 "contains multiple faces"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:29
+#: assets-dev/src/components/MatchedFace/index.tsx:22
 msgid "Unknown person"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:34
+#: assets-dev/src/components/MatchedFace/index.tsx:27
 msgid "Face"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:37
+#: assets-dev/src/components/MatchedFace/index.tsx:30
 #. 1: country name
 msgid "Country: %s"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:41
+#: assets-dev/src/components/MatchedFace/index.tsx:31
 msgid "Matched photo"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:48
+#: assets-dev/src/components/MatchedFace/index.tsx:32
 msgid "Primary photo"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:52
+#: assets-dev/src/components/MatchedFace/index.tsx:33
 #. 1: similarity
 msgid "Similarity: %1$d%%"
 msgstr ""

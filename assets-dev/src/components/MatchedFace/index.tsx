@@ -1,23 +1,16 @@
-import React, { Component, MouseEvent, ReactNode } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { __, sprintf } from '@wordpress/i18n';
 import { MatchedFace as FoundFace } from '../../api';
+import PhotoLink from '../PhotoLink';
+import Paragraph from '../Paragraph';
 
 type Props = FoundFace & {
-	onClick?: ( link: string ) => unknown;
+	onClick: ( link: string ) => unknown;
 };
 
 export default class MatchedFace extends Component<Props, unknown> {
-	private readonly _onLinkClicked = ( e: MouseEvent<HTMLAnchorElement> ): void => {
-		const { onClick } = this.props;
-
-		if ( onClick ) {
-			e.preventDefault();
-			onClick( e.currentTarget.href );
-		}
-	};
-
 	public render(): ReactNode {
-		const { country, face, link, matchedPhoto, name, primaryPhoto, similarity } = this.props;
+		const { country, face, link, matchedPhoto, name, onClick, primaryPhoto, similarity } = this.props;
 		return (
 			<>
 				<a
@@ -34,22 +27,10 @@ export default class MatchedFace extends Component<Props, unknown> {
 					alt={ __( 'Face', 'i8fjs' ) }
 				/>
 
-				{ country && <p className="mb-1">{ /* translators: 1: country name */ sprintf( __( 'Country: %s', 'i8fjs' ), country ) }</p> }
-				{ matchedPhoto && (
-					<p className="mb-1">
-						<a href={ matchedPhoto } target="_blank" rel="noopener noreferrer" onClick={ this._onLinkClicked }>
-							{ __( 'Matched photo', 'i8fjs' ) }
-						</a>
-					</p>
-				) }
-				{ primaryPhoto && (
-					<p className="mb-1">
-						<a href={ primaryPhoto } target="_blank" rel="noopener noreferrer" onClick={ this._onLinkClicked }>
-							{ __( 'Primary photo', 'i8fjs' ) }
-						</a>
-					</p>
-				) }
-				<p className="mb-1">{ /* translators: 1: similarity */ sprintf( __( 'Similarity: %1$d%%', 'i8fjs' ), similarity ) }</p>
+				{ country && <Paragraph>{ /* translators: 1: country name */ sprintf( __( 'Country: %s', 'i8fjs' ), country ) }</Paragraph> }
+				<PhotoLink link={ matchedPhoto } text={ __( 'Matched photo', 'i8fjs' ) } onClick={ onClick } />
+				<PhotoLink link={ primaryPhoto } text={ __( 'Primary photo', 'i8fjs' ) } onClick={ onClick } />
+				<Paragraph>{ /* translators: 1: similarity */ sprintf( __( 'Similarity: %1$d%%', 'i8fjs' ), similarity ) }</Paragraph>
 			</>
 		);
 	}

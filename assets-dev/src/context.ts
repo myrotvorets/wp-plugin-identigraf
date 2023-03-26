@@ -1,7 +1,7 @@
-import React from 'react';
+import { createContext } from 'react';
 
 export interface Context {
     token: string;
 }
 
-export const AppContext = React.createContext<Context>( { token: '' } );
+export const AppContext = createContext<Context>( { token: '' } );
