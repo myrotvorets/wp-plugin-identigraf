@@ -1,11 +1,11 @@
-import webpack from 'webpack';
+import { type Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import path from 'path';
 import commonConfig from './webpack.common';
 
-export default function(): webpack.Configuration {
+export default function(): Configuration {
 	return merge( commonConfig, {
 		mode: 'production',
 		output: {
@@ -83,5 +83,5 @@ export default function(): webpack.Configuration {
 			],
 			minimize: true,
 		},
-	} as webpack.Configuration );
+	} as Configuration );
 }

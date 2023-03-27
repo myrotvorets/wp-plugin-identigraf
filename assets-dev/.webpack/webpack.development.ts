@@ -1,12 +1,12 @@
-import webpack from 'webpack';
+import { type Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import path from 'path';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 import commonConfig from './webpack.common';
 
-export default function(): webpack.Configuration {
-	const devConfig: webpack.Configuration = {
+export default function(): Configuration {
+	const devConfig: Configuration = {
 		mode: 'development',
 		module: {
 			rules: [

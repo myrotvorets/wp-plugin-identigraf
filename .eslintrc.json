@@ -13,7 +13,8 @@
     "rules": {
         "no-invalid-this": "off",
         "no-unused-vars": "off",
-        "no-use-before-define": "off"
+        "no-use-before-define": "off",
+        "import/named": "off"
     },
     "env": {
         "browser": true
