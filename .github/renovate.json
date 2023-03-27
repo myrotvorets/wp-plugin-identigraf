@@ -5,7 +5,7 @@
     ],
     "packageRules": [
         {
-            "matchPackageNames": ["react", "react-dom", "@wordpress/api-fetch", "@wordpress/i18n"],
+            "matchPackageNames": ["react", "react-dom", "@wordpress/api-fetch", "@wordpress/i18n", "@types/react", "@types/react-dom"],
             "enabled": false
         }
     ]
