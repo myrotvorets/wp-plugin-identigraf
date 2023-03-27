@@ -8,9 +8,7 @@
         "noUnusedLocals": true,
         "noUnusedParameters": false,
         "noFallthroughCasesInSwitch": true,
-        "esModuleInterop": true,
-        "skipDefaultLibCheck": true,
-        "skipLibCheck": true
+        "esModuleInterop": true
     },
     "include": ["assets-dev/webpack.*.ts", "assets-dev/.webpack/*.ts", "assets-dev/src/**/*.ts", "assets-dev/src/**/*.tsx"],
     "exclude": ["node_modules"]

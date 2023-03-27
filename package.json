@@ -12,12 +12,12 @@
   "author": "Myrotvorets <support@myrotvorets.center> (https://myrotvorets.center/)",
   "license": "MIT",
   "dependencies": {
-    "@wordpress/api-fetch": "^6.0.0",
-    "@wordpress/i18n": "^4.2.2",
+    "@wordpress/api-fetch": "6.14.1",
+    "@wordpress/i18n": "4.17.1",
     "bootstrap": "^5.1.1",
-    "react": "^17.0.2",
+    "react": "17.0.2",
     "react-bootstrap": "^2.0.0-beta.6",
-    "react-dom": "^17.0.2",
+    "react-dom": "17.0.2",
     "react-image-lightbox": "^5.1.4",
     "react-router-dom": "^6.0.0"
   },
@@ -35,7 +35,6 @@
     "@types/node": "^18.0.0",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
-    "@types/react-router-dom": "^5.1.9",
     "@wordpress/babel-plugin-makepot": "~5.6.0",
     "@wordpress/eslint-plugin": "^14.0.0",
     "autoprefixer": "^10.2.3",
@@ -72,5 +71,9 @@
     "url": "https://github.com/myrotvorets/wp-plugin-identigraf/issues"
   },
   "homepage": "https://github.com/myrotvorets/wp-plugin-identigraf#readme",
-  "description": ""
+  "description": "",
+  "overrides": {
+    "@types/react": "$@types/react",
+    "@types/react-dom": "$@types/react-dom"
+  }
 }
