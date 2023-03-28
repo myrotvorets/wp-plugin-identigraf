@@ -16,7 +16,7 @@ services:
       - db
 
   db:
-    image: mariadb:10.11
+    image: mariadb:10.11@sha256:9ff479f244cc596aed9794d035a9f352662f2caed933238c533024df64569853
     volumes:
       - db:/var/lib/mysql
     environment:
