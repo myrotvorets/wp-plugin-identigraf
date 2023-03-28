@@ -52,7 +52,16 @@ final class Settings implements ArrayAccess {
 	 * @psalm-return SettingsArray
 	 */
 	public static function defaults(): array {
-		return self::$defaults;
+		$defaults = self::$defaults;
+		if ( ! empty( $_ENV['WP_IDENTIGRAF_ENDPOINT'] ) ) {
+			$defaults['endpoint'] = stripslashes( $_ENV['WP_IDENTIGRAF_ENDPOINT'] );
+		}
+
+		if ( ! empty( $_ENV['WP_IDENTIGRAF_JWT_SECRET'] ) ) {
+			$defaults['secret'] = stripslashes( $_ENV['WP_IDENTIGRAF_JWT_SECRET'] );
+		}
+
+		return $defaults;
 	}
 
 	/**

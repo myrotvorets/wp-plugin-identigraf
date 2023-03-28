@@ -1,3 +1,4 @@
+/.devcontainer      export-ignore
 /assets-dev         export-ignore
 /*.dist             export-ignore
 /*.js               export-ignore
