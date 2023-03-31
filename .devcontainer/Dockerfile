@@ -1,4 +1,4 @@
-FROM wordpress:apache@sha256:6991d7aea34c9746ab76ab22bcccdedc3594d37a148e08161c29b128bd50294c
+FROM wordpress:apache@sha256:fad1ce2182a79e442b20b333a3be786e84a4e44391f87dab51a1992e22790528
 
 RUN install -d -o www-data -g www-data /var/www
 RUN usermod -s /bin/bash www-data
