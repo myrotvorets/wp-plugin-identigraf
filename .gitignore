@@ -1,3 +1,6 @@
+/assets/bootstrap.min.js
+/assets/lightbox.min.js
+/assets/*.hot-update.*
 /node_modules/
 /vendor/
 /lang/*~

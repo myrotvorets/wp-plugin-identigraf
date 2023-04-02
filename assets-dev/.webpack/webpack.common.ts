@@ -2,6 +2,7 @@ import { type Configuration, DefinePlugin } from 'webpack';
 import webpackDevServer from 'webpack-dev-server';
 import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment
 const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 
@@ -12,6 +13,7 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 	entry: {
 		search: path.resolve( __dirname, '../src/search.tsx' ),
 		compare: path.resolve( __dirname, '../src/compare.tsx' ),
+		video: path.resolve( __dirname, '../src/video.tsx' ),
 		bootstrap: path.resolve( __dirname, '../src/bootstrap.scss' ),
 		lightbox: require.resolve( 'react-image-lightbox/style.css' ),
 	},
@@ -47,6 +49,11 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 		port: 8081,
 		historyApiFallback: true,
 		hot: true,
+		static: path.resolve( __dirname, '../../assets' ),
+		devMiddleware: {
+			publicPath: '/wp-content/plugins/wp-identigraf/assets',
+			writeToDisk: true,
+		},
 	},
 	module: {
 		rules: [
@@ -62,12 +69,44 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 				test: /\.(png|jpe?g|webp)$/u,
 				type: 'asset/resource',
 			},
+			{
+				test: /\.s?css$/u,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: false,
+							importLoaders: 1,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: false,
+							postcssOptions: {
+								config: path.resolve( path.join( __dirname, '..' ) ),
+							},
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: false,
+						},
+					},
+				],
+			},
 		],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new DefinePlugin( {
 			'process.env.NODE_ENV': JSON.stringify( isProd ? 'production' : 'development' ),
+		} ),
+		new MiniCssExtractPlugin( {
+			filename: '[name].min.css',
+			chunkFilename: '[name].[contenthash:5].min.css',
 		} ),
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 		new RemoveEmptyScriptsPlugin(),
@@ -83,6 +122,7 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 				},
 			},
 		},
+		// runtimeChunk: 'single',
 	},
 };
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IDentigraF 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
-"POT-Creation-Date: 2021-09-20T20:08:08+03:00\n"
+"POT-Creation-Date: 2023-04-09T13:47:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Domain: i8fa\n"
 
 #. Plugin Name of the plugin
-#: inc/class-admin.php:36 inc/class-admin.php:37
+#: inc/class-admin.php:39 inc/class-admin.php:40
 msgid "IDentigraF"
 msgstr "IDentigraF"
 
@@ -36,34 +36,46 @@ msgstr "Myrotvorets"
 msgid "https://myrotvorets.center/"
 msgstr "https://myrotvorets.center/"
 
-#: inc/class-admin.php:36
+#: inc/class-admin.php:39
 msgid "IDentigraF Settings"
 msgstr "IDentigraF: настройки"
 
-#: inc/class-admin.php:37 inc/class-admin.php:39
+#: inc/class-admin.php:40 inc/class-admin.php:42
 msgid "Search by Photo"
 msgstr "Поиск по фотографии"
 
-#: inc/class-admin.php:39
+#: inc/class-admin.php:42
 msgid "Search"
 msgstr "Поиск"
 
-#: inc/class-admin.php:40
+#: inc/class-admin.php:43
 msgid "Compare Faces"
 msgstr "Сравнение лиц"
 
-#: inc/class-admin.php:40
+#: inc/class-admin.php:43
 msgid "Compare"
 msgstr "Сравнение"
 
-#: inc/class-admin.php:106
+#: inc/class-admin.php:44
+msgid "Upload Video"
+msgstr "Загрузка видео"
+
+#: inc/class-admin.php:44
+msgid "Video"
+msgstr "Видео"
+
+#: inc/class-admin.php:144
 msgid "Settings"
 msgstr "Настройки"
 
 #: inc/class-adminsettings.php:44
-msgid "API Endpoint"
-msgstr "Конечная точка API"
+msgid "API Server URL"
+msgstr "URL сервера API"
 
-#: inc/class-adminsettings.php:58
+#: inc/class-adminsettings.php:59
+msgid "Seeda Sambaddh API Server URL"
+msgstr "URL сервера Seeda Sambaddh API"
+
+#: inc/class-adminsettings.php:74
 msgid "JWT Secret"
 msgstr "Секрет JWT"

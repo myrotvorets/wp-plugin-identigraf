@@ -84,3 +84,8 @@ export interface MatchedFacesResponse {
 	success: true;
 	matches: MatchedFace[];
 }
+
+export interface VideoUploadResponse {
+	success: true;
+	guid: string;
+}

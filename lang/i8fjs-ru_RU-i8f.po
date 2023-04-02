@@ -55,31 +55,37 @@ msgstr "Эталонные фотографии (до 10 файлов)"
 
 #: assets-dev/src/components/CompareForm/index.tsx:146
 #: assets-dev/src/components/SearchForm/index.tsx:131
+#: assets-dev/src/components/VideoForm/index.tsx:170
 msgid "Submit"
 msgstr "Отправить"
 
 #: assets-dev/src/components/CompareForm/index.tsx:73
 #: assets-dev/src/components/SearchForm/index.tsx:67
+#: assets-dev/src/components/VideoForm/index.tsx:74
 msgid "Failed to upload the file"
 msgstr "Не удалось загрузить файл"
 
 #: assets-dev/src/components/CompareForm/index.tsx:77
 #: assets-dev/src/components/SearchForm/index.tsx:71
+#: assets-dev/src/components/VideoForm/index.tsx:78
 msgid "Request has timed out"
 msgstr "Время ожидания запроса истекло"
 
 #: assets-dev/src/components/CompareForm/index.tsx:81
 #: assets-dev/src/components/SearchForm/index.tsx:75
+#: assets-dev/src/components/VideoForm/index.tsx:82
 msgid "Upload aborted"
 msgstr "Загрузка прервана"
 
 #: assets-dev/src/components/CompareForm/index.tsx:93
 #: assets-dev/src/components/SearchForm/index.tsx:86
+#: assets-dev/src/components/VideoForm/index.tsx:101
 msgid "Unexpected authentication error"
 msgstr "Неожиданная ошибка аутентификации"
 
 #: assets-dev/src/components/CompareForm/index.tsx:98
 #: assets-dev/src/components/SearchForm/index.tsx:91
+#: assets-dev/src/components/VideoForm/index.tsx:106
 msgid "Unknown error while analyzing the server response"
 msgstr "Неизвестная ошибка при анализе ответа сервера"
 
@@ -104,29 +110,29 @@ msgstr ""
 "К сожалению, системе не удалось распознать ни одного лица на фотографии, "
 "либо на фотографии несколько лиц."
 
-#: assets-dev/src/components/MatchedFace/index.tsx:29
+#: assets-dev/src/components/MatchedFace/index.tsx:22
 msgid "Unknown person"
 msgstr "Неизвестная личность"
 
-#: assets-dev/src/components/MatchedFace/index.tsx:34
+#: assets-dev/src/components/MatchedFace/index.tsx:27
 msgid "Face"
 msgstr "Лицо"
 
 #. 1: country name
-#: assets-dev/src/components/MatchedFace/index.tsx:37
+#: assets-dev/src/components/MatchedFace/index.tsx:30
 msgid "Country: %s"
 msgstr "Страна: %s"
 
-#: assets-dev/src/components/MatchedFace/index.tsx:41
+#: assets-dev/src/components/MatchedFace/index.tsx:31
 msgid "Matched photo"
 msgstr "Совпавшая фотография"
 
-#: assets-dev/src/components/MatchedFace/index.tsx:48
+#: assets-dev/src/components/MatchedFace/index.tsx:32
 msgid "Primary photo"
 msgstr "Основная фотография"
 
 #. 1: similarity
-#: assets-dev/src/components/MatchedFace/index.tsx:52
+#: assets-dev/src/components/MatchedFace/index.tsx:33
 msgid "Similarity: %1$d%%"
 msgstr "Сходство: %1$d%%"
 
@@ -164,6 +170,31 @@ msgstr ""
 #: assets-dev/src/components/UploadProgress/index.tsx:16
 msgid "Upload:"
 msgstr "Загрузка:"
+
+#: assets-dev/src/components/VideoForm/index.tsx:128
+msgid "Video has been successfully uploaded."
+msgstr "Видео успешно загружено."
+
+#. %s = Video GUID
+#: assets-dev/src/components/VideoForm/index.tsx:129
+msgid "Video ID: %s"
+msgstr "ID видео: %s"
+
+#: assets-dev/src/components/VideoForm/index.tsx:130
+msgid "Results will be sent to your email address."
+msgstr "Результаты будут отправлены на вашу электронную почту."
+
+#: assets-dev/src/components/VideoForm/index.tsx:134
+msgid "Video"
+msgstr "Видео"
+
+#: assets-dev/src/components/VideoForm/index.tsx:146
+msgid "Minimum similarity"
+msgstr "Минимальное сходство:"
+
+#: assets-dev/src/components/VideoForm/index.tsx:98
+msgid "Unexpected error"
+msgstr "Неожиданная ошибка"
 
 #: assets-dev/src/components/WaitForm/index.tsx:10
 msgid "Please wait…"
