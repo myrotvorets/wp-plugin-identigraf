@@ -1,18 +1,6 @@
 {
     "name": "IDentigraF Dev Container",
-    "forwardPorts": [80],
-    "portsAttributes": {
-        "80": {
-            "label": "Application"
-        }
-    },
-    "otherPortsAttributes": {
-        "onAutoForward": "ignore"
-    },
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "wordpress",
-    "workspaceFolder": "/usr/src/wordpress/wp-content/plugins/wp-identigraf",
-    "remoteUser": "www-data",
+    "image": "ghcr.io/sjinks/codespaces/wordpress-all-in-one",
     "updateContentCommand": ".devcontainer/update-content.sh",
     "postStartCommand": ".devcontainer/setup-wordpress.sh"
 }
