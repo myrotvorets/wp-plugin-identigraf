@@ -6,8 +6,7 @@
     "dev": "webpack serve --hot -c assets-dev/webpack.config.ts",
     "build": "webpack --mode=production -c assets-dev/webpack.config.ts",
     "watch": "webpack watch --mode=development -c assets-dev/webpack.config.ts",
-    "lint": "eslint -f gha assets-dev",
-    "postinstall": "patch-package"
+    "lint": "eslint -f gha assets-dev"
   },
   "keywords": [],
   "author": "Myrotvorets <support@myrotvorets.center> (https://myrotvorets.center/)",
@@ -36,7 +35,7 @@
     "@types/node": "^18.0.0",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
-    "@wordpress/babel-plugin-makepot": "^5.6.0",
+    "@wordpress/babel-plugin-makepot": "^5.14.0",
     "@wordpress/eslint-plugin": "^14.0.0",
     "autoprefixer": "^10.2.3",
     "babel-loader": "^9.0.0",
@@ -49,7 +48,6 @@
     "fibers": "^5.0.0",
     "fork-ts-checker-webpack-plugin": "^8.0.0",
     "mini-css-extract-plugin": "^2.0.0",
-    "patch-package": "^6.5.1",
     "postcss": "^8.2.4",
     "postcss-loader": "^7.0.0",
     "prettier": "^2.2.1",
