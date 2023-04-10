@@ -1,6 +1,7 @@
 interface Window {
     i8f: {
-        endpoint: string;
+        iendpoint: string;
+        vendpoint: string;
         title: string;
         baseurl: string;
     };

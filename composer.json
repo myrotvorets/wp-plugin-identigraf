@@ -14,7 +14,8 @@
 		"php": "^7.4.0 || ^8.0.0",
 		"composer/installers": "^2.0",
 		"firebase/php-jwt": "^6.0",
-		"wildwolf/singleton-trait": "^1.0.1"
+		"wildwolf/singleton-trait": "^1.0.1",
+		"wildwolf/wp-request-context": "^1.0"
 	},
 	"require-dev": {
 		"automattic/vipwpcs": "^2.3",

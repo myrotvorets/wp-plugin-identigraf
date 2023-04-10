@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IDentigraF 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
-"POT-Creation-Date: 2021-09-19T18:30:04+03:00\n"
+"POT-Creation-Date: 2023-04-09T13:47:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,72 @@ msgstr "Myrotvorets"
 msgid "https://myrotvorets.center/"
 msgstr "https://myrotvorets.center/"
 
-#: inc/class-rest-controller.php:39
+#: inc/class-cron.php:30
+msgid "Unable to process the video. Unknown error."
+msgstr "Не удалось обработать видео. Неизвестная ошибка."
+
+#. translators: 1 - blog name
+#: inc/class-cron.php:123
+msgid "[%1$s] VIDentigraF: Video Processing Results"
+msgstr "[%1$s] VIDentigraF: Результаты обработки видео"
+
+#. translators: 1 - video GUID, 2 - error message
+#: inc/class-cron.php:126
+msgid "There was an error processing the video %1$s: %2$s"
+msgstr "Произошла ошибка при обработке видео %1$s: %2$s"
+
+#. translators: 1 - video GUID, 2 - video link
+#: inc/class-cron.php:129
+msgid ""
+"Video %1$s has been processed.\n"
+"\n"
+"Link: %2$s\n"
+"\n"
+"The link is valid for 24 hours."
+msgstr ""
+"Видео %1$s обработано.\n"
+"\n"
+"Ссылка: %2$s\n"
+"\n"
+"Ссылка действительна в течение 24 часов."
+
+#. translators: 1 = error code
+#. translators: 1 = HTTP error code
+#: inc/class-oiddecoder.php:43 inc/class-videntigraf.php:42
+#: inc/class-videntigraf.php:97
+msgid "HTTP error %1$d calling Myrotvorets API."
+msgstr "Ошибка HTTP %1$d при обращении к Myrotvorets API."
+
+#: inc/class-oiddecoder.php:53 inc/class-videntigraf.php:60
+msgid "Bad response from Myrotvorets API."
+msgstr "Неверный ответ от Myrotvorets API."
+
+#: inc/class-rest-controller.php:49
 msgid "Access denied."
 msgstr "Доступ запрещён."
+
+#: inc/class-rest-controller.php:81
+msgid "Bad request."
+msgstr "Неверный запрос."
+
+#. translators: %s = file name
+#: inc/class-resultsprocessor.php:209
+msgid "Failed to create file \"%s\""
+msgstr "Не удалось создать файл \"%s\""
+
+#: inc/class-resultsprocessor.php:226
+msgid "Failed to add a file to the archive."
+msgstr "Не удалось добавить файл в архив."
+
+#: inc/class-resultsprocessor.php:232
+msgid "Failed to archive results."
+msgstr "Не удалось создать архив с результатами."
+
+#. translators: 1 - file name
+#: inc/class-utils.php:30 inc/class-utils.php:42
+msgid "Unable to extract file \"%1$s\"."
+msgstr "Не удалось извлечь файл \"%1$s\"."
+
+#: inc/class-utils.php:36
+msgid "Unable to create temporary file."
+msgstr "Невозможно создать временный файл."

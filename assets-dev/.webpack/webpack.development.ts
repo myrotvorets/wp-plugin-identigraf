@@ -8,14 +8,6 @@ import commonConfig from './webpack.common';
 export default function(): Configuration {
 	const devConfig: Configuration = {
 		mode: 'development',
-		module: {
-			rules: [
-				{
-					test: /\.s?css$/u,
-					use: [ 'style-loader', 'css-loader', 'sass-loader' ],
-				},
-			],
-		},
 		plugins: [
 			new ForkTsCheckerWebpackPlugin( {
 				typescript: {

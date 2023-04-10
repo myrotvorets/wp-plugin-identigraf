@@ -35,7 +35,7 @@ export default class API {
 			Authorization: `Bearer ${ auth }`,
 		};
 
-		return API.fetch<R>( `${ self.i8f.endpoint }${ endpoint }`, { headers } );
+		return API.fetch<R>( `${ self.i8f.iendpoint }${ endpoint }`, { headers } );
 	}
 
 	private static fetch<R>( endpoint: string, init: RequestInit ): Promise<R | ErrorResponse> {

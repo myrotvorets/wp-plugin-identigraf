@@ -8,7 +8,8 @@ use WildWolf\Utils\Singleton;
 
 /**
  * @psalm-type SettingsArray = array{
- *  endpoint: string,
+ *  server: string,
+ *  ssserver: string,
  *  secret: string
  * }
  *
@@ -25,7 +26,8 @@ final class Settings implements ArrayAccess {
 	 * @psalm-var SettingsArray
 	 */
 	private static $defaults = [
-		'endpoint' => '',
+		'server'   => '',
+		'ssserver' => '',
 		'secret'   => '',
 	];
 
@@ -53,8 +55,12 @@ final class Settings implements ArrayAccess {
 	 */
 	public static function defaults(): array {
 		$defaults = self::$defaults;
-		if ( ! empty( $_ENV['WP_IDENTIGRAF_ENDPOINT'] ) ) {
-			$defaults['endpoint'] = stripslashes( $_ENV['WP_IDENTIGRAF_ENDPOINT'] );
+		if ( ! empty( $_ENV['MYROTVORETS_API_SERVER'] ) ) {
+			$defaults['server'] = stripslashes( $_ENV['MYROTVORETS_API_SERVER'] );
+		}
+
+		if ( ! empty( $_ENV['MYROTVORETS_SS_API_SERVER'] ) ) {
+			$defaults['ssserver'] = stripslashes( $_ENV['MYROTVORETS_SS_API_SERVER'] );
 		}
 
 		if ( ! empty( $_ENV['WP_IDENTIGRAF_JWT_SECRET'] ) ) {
@@ -98,12 +104,21 @@ final class Settings implements ArrayAccess {
 		throw new LogicException();
 	}
 
-	public function valid(): bool {
-		return ! empty( $this->options['endpoint'] ) && ! empty( $this->options['secret'] );
+	public function valid_identigraf_settings(): bool {
+		return ! empty( $this->options['secret'] ) && ! empty( $this->options['server'] );
 	}
 
-	public function get_endpoint(): string {
-		return $this->options['endpoint'];
+	public function valid_videntigraf_settings(): bool {
+		return $this->valid_identigraf_settings() ||
+			( ! empty( $this->options['secret'] ) && ! empty( $this->options['ssserver'] ) );
+	}
+
+	public function get_api_server(): string {
+		return $this->options['server'];
+	}
+
+	public function get_ss_api_server(): string {
+		return $this->options['ssserver'] ?: $this->get_api_server();
 	}
 
 	public function get_secret(): string {

@@ -40,11 +40,22 @@ abstract class SettingsValidator {
 		if ( is_array( $settings ) ) {
 			$settings = self::ensure_data_shape( $settings );
 
-			$settings['endpoint'] = filter_var( $settings['endpoint'], FILTER_VALIDATE_URL, [
+			$settings['server'] = filter_var( $settings['server'], FILTER_VALIDATE_URL, [
 				'options' => [ 'default' => '' ],
 			] );
 
-			$settings['endpoint'] = filter_var( $settings['endpoint'], FILTER_VALIDATE_REGEXP, [
+			$settings['server'] = filter_var( $settings['server'], FILTER_VALIDATE_REGEXP, [
+				'options' => [
+					'default' => '',
+					'regexp'  => '!^https://!i',
+				],
+			] );
+
+			$settings['ssserver'] = filter_var( $settings['ssserver'], FILTER_VALIDATE_URL, [
+				'options' => [ 'default' => '' ],
+			] );
+
+			$settings['ssserver'] = filter_var( $settings['ssserver'], FILTER_VALIDATE_REGEXP, [
 				'options' => [
 					'default' => '',
 					'regexp'  => '!^https://!i',

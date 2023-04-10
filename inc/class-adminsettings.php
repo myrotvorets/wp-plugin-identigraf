@@ -40,13 +40,28 @@ final class AdminSettings {
 		);
 
 		add_settings_field(
-			'endpoint',
-			__( 'API Endpoint', 'i8fa' ),
+			'server',
+			__( 'API Server URL', 'i8fa' ),
 			[ $this->input_factory, 'input' ],
 			Admin::OPTIONS_MENU_SLUG,
 			$section,
 			[
-				'label_for'    => 'endpoint',
+				'label_for'    => 'server',
+				'type'         => 'url',
+				'required'     => true,
+				'autocomplete' => 'off',
+				'class'        => 'regular-text',
+			]
+		);
+
+		add_settings_field(
+			'ssserver',
+			__( 'Seeda Sambaddh API Server URL', 'i8fa' ),
+			[ $this->input_factory, 'input' ],
+			Admin::OPTIONS_MENU_SLUG,
+			$section,
+			[
+				'label_for'    => 'ssserver',
 				'type'         => 'url',
 				'required'     => true,
 				'autocomplete' => 'off',

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81515943cc32b3356bf6737ba5ac0a31",
+    "content-hash": "89145ecf39384bb419788312e36dd140",
     "packages": [
         {
             "name": "composer/installers",
@@ -259,6 +259,57 @@
                 "source": "https://github.com/sjinks/php-singleton-trait/tree/1.0.5"
             },
             "time": "2022-02-12T18:11:27+00:00"
+        },
+        {
+            "name": "wildwolf/wp-request-context",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sjinks/wp-request-context.git",
+                "reference": "4290e30d523c64e602d3fced5eb0266f268bf98a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sjinks/wp-request-context/zipball/4290e30d523c64e602d3fced5eb0266f268bf98a",
+                "reference": "4290e30d523c64e602d3fced5eb0266f268bf98a",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "vimeo/psalm": "^4.9",
+                "wp-coding-standards/wpcs": "^2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WildWolf\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WordPress request context helper library",
+            "keywords": [
+                "Context",
+                "helper",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/sjinks/wp-request-context/issues",
+                "source": "https://github.com/sjinks/wp-request-context/tree/1.0.1"
+            },
+            "time": "2021-09-06T08:58:29+00:00"
         }
     ],
     "packages-dev": [

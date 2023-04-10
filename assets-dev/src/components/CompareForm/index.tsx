@@ -51,7 +51,7 @@ export default class CompareForm extends Component<unknown, State> {
 		req.addEventListener( 'abort', this._onUploadAborted );
 		req.addEventListener( 'timeout', this._onUploadTimeout );
 		req.addEventListener( 'load', this._onUploadSucceeded );
-		req.open( 'POST', `${ self.i8f.endpoint }/compare` );
+		req.open( 'POST', `${ self.i8f.iendpoint }/compare` );
 		req.setRequestHeader( 'Authorization', `Bearer ${ this.context.token }` );
 		req.send( data );
 	};

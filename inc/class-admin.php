@@ -15,6 +15,9 @@ final class Admin {
 	/** @var string|false|null */
 	private $compare_slug;
 
+	/** @var string|false|null */
+	private $video_slug;
+
 	private function __construct() {
 		$this->init();
 	}
@@ -38,13 +41,19 @@ final class Admin {
 
 		$this->search_slug  = add_submenu_page( 'i8f', __( 'Search by Photo', 'i8fa' ), __( 'Search', 'i8fa' ), 'level_1', 'i8f', [ $this, 'i8f_page' ] );
 		$this->compare_slug = add_submenu_page( 'i8f', __( 'Compare Faces', 'i8fa' ), __( 'Compare', 'i8fa' ), 'level_1', 'i8f-compare', [ $this, 'i8f_page' ] );
+		$this->video_slug   = add_submenu_page( 'i8f', __( 'Upload Video', 'i8fa' ), __( 'Video', 'i8fa' ), 'level_1', 'i8f-video', [ $this, 'i8f_page' ] );
 
-		if ( $this->search_slug && $this->compare_slug ) {
-			if ( Settings::instance()->valid() ) {
-				add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
-			} else {
+		if ( $this->search_slug && $this->compare_slug && $this->video_slug ) {
+			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
+			
+			$settings = Settings::instance();
+			if ( ! $settings->valid_identigraf_settings() ) {
 				add_action( 'load-' . $this->search_slug, [ $this, 'redirect_to_settings' ] );
 				add_action( 'load-' . $this->compare_slug, [ $this, 'redirect_to_settings' ] );
+			}
+
+			if ( ! $settings->valid_videntigraf_settings() ) {
+				add_action( 'load-' . $this->video_slug, [ $this, 'redirect_to_settings' ] );
 			}
 		}
 	}
@@ -53,7 +62,8 @@ final class Admin {
 	 * @param string $hook
 	 */
 	public function admin_enqueue_scripts( $hook ): void {
-		if ( $hook === $this->search_slug || $hook === $this->compare_slug ) {
+		if ( $hook === $this->search_slug || $hook === $this->compare_slug || $hook === $this->video_slug ) {
+			add_filter( 'script_loader_tag', [ $this, 'script_loader_tag' ], 10, 2 );
 			wp_enqueue_style( 'i8f-bootstrap', plugins_url( 'assets/bootstrap.min.css', __DIR__ ), [], '5.1.1-' . (string) filemtime( __DIR__ . '/../assets/bootstrap.min.css' ) );
 			wp_enqueue_style( 'i8f-lightbox', plugins_url( 'assets/lightbox.min.css', __DIR__ ), [], '5.1.4' );
 
@@ -65,7 +75,20 @@ final class Admin {
 				true
 			);
 
-			$script = $hook === $this->search_slug ? 'search' : 'compare';
+			switch ( $hook ) {
+				default:
+					$script = 'search';
+					break;
+
+				case $this->compare_slug:
+					$script = 'compare';
+					break;
+
+				case $this->video_slug:
+					$script = 'video';
+					break;
+			}
+
 			wp_enqueue_script(
 				'i8f',
 				plugins_url( "assets/{$script}.min.js", __DIR__ ),
@@ -75,13 +98,27 @@ final class Admin {
 			);
 
 			wp_localize_script( 'i8f', 'i8f', [
-				'endpoint' => Settings::instance()->get_endpoint(),
-				'title'    => get_admin_page_title(),
-				'baseurl'  => defined( 'PSB_PRIMARY_DOMAIN' ) ? get_bloginfo( 'url' ) : 'https://myrotvorets.center',
+				'iendpoint' => rtrim( Settings::instance()->get_api_server(), '/' ) . '/identigraf/v2',
+				'vendpoint' => rtrim( Settings::instance()->get_ss_api_server(), '/' ) . '/videntigraf/v1',
+				'title'     => get_admin_page_title(),
+				'baseurl'   => defined( 'PSB_PRIMARY_DOMAIN' ) ? get_bloginfo( 'url' ) : 'https://myrotvorets.center',
 			] );
 
 			wp_set_script_translations( 'i8f', 'i8fjs', plugin_dir_path( dirname( __DIR__ ) . '/index.php' ) . '/lang' );
 		}
+	}
+
+	/**
+	 * @param string $tag
+	 * @param string $handle
+	 * @return string
+	 */
+	public function script_loader_tag( $tag, $handle ) {
+		if ( 'i8f-rtl' === $handle || 'i8f' === $handle ) {
+			$tag = preg_replace( '/(.*)(><\/script>)/', '$1 type="module"$2', $tag );
+		}
+
+		return $tag;
 	}
 
 	public static function options_page(): void {

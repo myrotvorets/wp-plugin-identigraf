@@ -2,5 +2,24 @@
     "name": "IDentigraF Dev Container",
     "image": "ghcr.io/sjinks/codespaces/wordpress-all-in-one",
     "updateContentCommand": ".devcontainer/update-content.sh",
-    "postStartCommand": ".devcontainer/setup-wordpress.sh"
+    "postStartCommand": ".devcontainer/setup-wordpress.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dlech.chmod",
+                "dbaeumer.vscode-eslint",
+                "mrorz.language-gettext",
+                "GitHub.copilot",
+                "bmewburn.vscode-intelephense-client",
+                "MehediDracula.php-namespace-resolver",
+                "wongjn.php-sniffer",
+                "esbenp.prettier-vscode",
+                "getpsalm.psalm-vscode-plugin",
+                "timonwong.shellcheck",
+                "johnbillion.vscode-wordpress-hooks",
+                "ms-azuretools.vscode-docker",
+                "zhiayang.tabindentspacealign"
+            ]
+        }
+    }
 }

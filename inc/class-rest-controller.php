@@ -2,9 +2,9 @@
 
 namespace Myrotvorets\WordPress\Identigraf;
 
-use Firebase\JWT\JWT;
 use WildWolf\Utils\Singleton;
 use WP_Error;
+use WP_REST_Request;
 use WP_REST_Response;
 use WP_REST_Server;
 
@@ -27,6 +27,16 @@ final class REST_Controller /* NOSONAR */ {
 				'callback'            => [ $this, 'get_token' ],
 			]
 		);
+
+		register_rest_route(
+			self::NAMESPACE,
+			'video-check',
+			[
+				'methods'             => WP_REST_Server::CREATABLE,
+				'permission_callback' => [ $this, 'check_level_1' ],
+				'callback'            => [ $this, 'video_check' ],
+			]
+		);
 	}
 
 	/**
@@ -45,19 +55,31 @@ final class REST_Controller /* NOSONAR */ {
 	}
 
 	public function get_token(): WP_REST_Response {
-		$user    = wp_get_current_user();
-		$secret  = Settings::instance()->get_secret();
-		$payload = [
-			'sub' => $user->ID,
-			'aud' => 'psbapi-identigraf',
-			'iss' => 'https://jwt.myrotvorets.center/identigraf',
-			'exp' => time() + 300,
-		];
-
-		$token = JWT::encode( $payload, $secret, 'HS512' );
-
+		$token = Utils::generate_token_for_user( get_current_user_id() );
 		return new WP_REST_Response([
 			'token' => $token,
 		]);
+	}
+
+	/**
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function video_check( WP_REST_Request $request ) {
+		// Get GUID from JSON body payload
+		$params = $request->get_json_params();
+		/** @var mixed */
+		$guid      = $params['guid'] ?? null;
+		$threshold = intval( $params['minSimilarity'] ?? 0 );
+
+		if ( $guid && is_string( $guid ) && 36 === strlen( $guid ) ) {
+			wp_schedule_single_event( time() + 5, 'identigraf_video_check', [ $guid, get_current_user_id(), time(), $threshold ] );
+			return new WP_REST_Response( [] );
+		}
+
+		return new WP_Error(
+			'bad_request',
+			__( 'Bad request.', 'i8f' ),
+			[ 'status' => 400 ]
+		);
 	}
 }

@@ -1,49 +1,56 @@
 import React, { ChangeEvent, Component, FormEvent, ReactNode } from 'react';
-import { Alert, Button, Col, Form, Row } from 'react-bootstrap';
-import { Navigate } from 'react-router-dom';
-import { __ } from '@wordpress/i18n';
-import { ErrorResponse, SearchUploadResponse, decodeErrorResponse } from '../../api';
-import PhotoPreview from '../PhotoPreview';
-import UploadProgress from '../UploadProgress';
+import { Alert, Button, Col, Form, InputGroup, Row } from 'react-bootstrap';
+import apiFetch from '@wordpress/api-fetch';
+import { __, sprintf } from '@wordpress/i18n';
+import { ErrorResponse, VideoUploadResponse, decodeErrorResponse } from '../../api';
 import { AppContext } from '../../context';
+import UploadProgress from '../UploadProgress';
+import VideoPreview from '../VideoPreview';
+import Paragraph from '../Paragraph';
 
 interface State {
-	image: string;
+	video: string;
 	uploadProgress: number | null;
 	error: string | null;
 	guid: string | null;
+	minSimilarity: number;
 }
 
-export default class SearchForm extends Component<unknown, State> {
+export default class VideoForm extends Component<unknown, State> {
 	public state: Readonly<State> = {
-		image: '',
+		video: '',
 		uploadProgress: null,
 		error: null,
 		guid: null,
+		minSimilarity: 0,
 	};
 
 	public static contextType = AppContext;
 	declare public context: React.ContextType<typeof AppContext>;
 
 	private readonly _onFileChange = ( { currentTarget }: ChangeEvent<HTMLInputElement> ): void => {
-		this.setState( { error: null } );
+		this.setState( { error: null, guid: null, video: '' } );
 		const { files } = currentTarget;
 		const f = files?.[ 0 ];
-		if ( f?.type.startsWith( 'image/' ) ) {
+		if ( f?.type.startsWith( 'video/' ) ) {
+			const type = f.type;
 			const reader = new FileReader();
 			reader.addEventListener( 'load', ( { target }: ProgressEvent<FileReader> ): void => {
-				this.setState( { image: ( target as FileReader ).result as string } );
+				const buffer = ( target as FileReader ).result as ArrayBuffer | null;
+				if ( buffer ) {
+					const blob = new Blob( [ new Uint8Array( buffer ) ], { type } );
+					this.setState( { video: URL.createObjectURL( blob ) } );
+				}
 			} );
 
-			reader.readAsDataURL( f );
-		} else {
-			this.setState( { image: '' } );
+			reader.readAsArrayBuffer( f );
 		}
 	};
 
 	private readonly _onFormSubmit = ( event: FormEvent<HTMLFormElement> ): void => {
 		event.preventDefault();
 		const data = new FormData( event.currentTarget );
+		data.delete( 'minsimilarity' );
 		this.setState( { uploadProgress: 0, error: null } );
 
 		const token = this.context.token;
@@ -53,7 +60,7 @@ export default class SearchForm extends Component<unknown, State> {
 		req.addEventListener( 'abort', this._onUploadAborted );
 		req.addEventListener( 'timeout', this._onUploadTimeout );
 		req.addEventListener( 'load', this._onUploadSucceeded );
-		req.open( 'POST', `${ self.i8f.iendpoint }/search` );
+		req.open( 'POST', `${ self.i8f.vendpoint }/process` );
 		req.setRequestHeader( 'Authorization', `Bearer ${ token }` );
 		req.send( data );
 	};
@@ -79,9 +86,17 @@ export default class SearchForm extends Component<unknown, State> {
 		this.setState( { uploadProgress: 100 } );
 		const req = e.currentTarget as XMLHttpRequest;
 		try {
-			const body = JSON.parse( req.responseText ) as SearchUploadResponse | ErrorResponse;
+			const body = JSON.parse( req.responseText ) as VideoUploadResponse | ErrorResponse;
 			if ( body.success ) {
-				this.setState( { guid: body.guid } );
+				apiFetch( {
+					method: 'POST',
+					path: '/identigraf/v2/video-check',
+					data: { guid: body.guid, minSimilarity: this.state.minSimilarity },
+				} ).then( () => {
+					this.setState( { guid: body.guid, video: '', uploadProgress: null } );
+				} ).catch( () => {
+					this._setError( __( 'Unexpected error', 'i8fjs' ) );
+				} );
 			} else if ( req.status === 401 ) {
 				this._setError( __( 'Unexpected authentication error', 'i8fjs' ) );
 			} else {
@@ -92,36 +107,60 @@ export default class SearchForm extends Component<unknown, State> {
 		}
 	};
 
+	private readonly _onMinSimilarityChange = ( e: ChangeEvent<HTMLInputElement> ): void => {
+		this.setState( {
+			minSimilarity: e.target.valueAsNumber,
+		} );
+	};
+
 	private _setError( error: string ): void {
 		this.setState( { uploadProgress: null, error } );
 	}
 
 	public render(): ReactNode {
-		const { error, guid, image, uploadProgress } = this.state;
-
-		if ( guid !== null ) {
-			return <Navigate to={ `/search/${ guid }` } />;
-		}
+		const { error, guid, minSimilarity, uploadProgress, video } = this.state;
 
 		return (
 			<Form encType="multipart/form-data" onSubmit={ this._onFormSubmit }>
 				{ error && <Alert variant="danger">{ error }</Alert> }
 
-				<Form.Group controlId="photo" className="mb-3">
-					<Form.Label>{ __( 'Photo', 'i8fjs' ) }</Form.Label>
+				{ guid && <Alert variant="success">
+					<Paragraph>{ __( 'Video has been successfully uploaded.', 'i8fjs' ) }</Paragraph>
+					<Paragraph>{ /* translators: %s = Video GUID */ sprintf( __( 'Video ID: %s', 'i8fjs' ), guid ) }</Paragraph>
+					<Paragraph>{ __( 'Results will be sent to your email address.', 'i8fjs' ) }</Paragraph>
+				</Alert> }
+
+				<Form.Group controlId="video" className="mb-3">
+					<Form.Label>{ __( 'Video', 'i8fjs' ) }</Form.Label>
 					<Form.Control
-						name="photo"
+						name="video"
 						type="file"
 						required
-						accept="image/png, image/jpeg"
+						accept="video/*"
 						disabled={ uploadProgress !== null }
 						onChange={ this._onFileChange }
 					/>
 				</Form.Group>
 
+				<Form.Group controlId="minsimilarity" className="mb-3">
+					<Form.Label>{ __( 'Minimum similarity', 'i8fj' ) }</Form.Label>
+					<InputGroup className="mb-3">
+						<Form.Control
+							name="minsimilarity"
+							type="number"
+							min={ 0 }
+							max={ 100 }
+							required
+							value={ minSimilarity }
+							onChange={ this._onMinSimilarityChange }
+						/>
+						<InputGroup.Text>%</InputGroup.Text>
+					</InputGroup>
+				</Form.Group>
+
 				<Row>
 					<Col>
-						<PhotoPreview image={ image } />
+						<VideoPreview video={ video } />
 					</Col>
 				</Row>
 
