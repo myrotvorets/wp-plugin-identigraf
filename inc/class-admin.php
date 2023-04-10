@@ -76,7 +76,6 @@ final class Admin {
 			);
 
 			switch ( $hook ) {
-				case $this->search_slug:
 				default:
 					$script = 'search';
 					break;
