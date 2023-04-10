@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || die();
  * @psalm-var array<int,
  *  array<int,
  *      array{ link: string, name: string, similarity: int, m_photo: string, f_photo: string }
- *  > 
+ *  >
  * > $result
  */
 // phpcs:disable WordPressVIPMinimum.Security.ProperEscapingFunction.hrefSrcEscUrl -- links are relative, `esc_url()` prepends http://
@@ -40,7 +40,10 @@ defined( 'ABSPATH' ) || die();
 							<ul class="listgroup">
 								<?php foreach ( $data as $match_id => $match ) : ?>
 								<li class="list-group-item">
-									<a href="<?=esc_attr( $match['link'] ); ?>" class="fw-bold text-danger"><?=esc_html( $match['name'] ); ?></a> (<?=esc_html( (string) $match['similarity'] ); ?>%)<br/>
+									<a href="<?=esc_attr( $match['link'] ); ?>" class="fw-bold text-danger">
+										<?=esc_html( $match['name'] ); ?>
+									</a>
+									(<?=esc_html( (string) $match['similarity'] ); ?>%)<br/>
 									<img src="<?=esc_attr( "m/{$match_id}.jpg" ); ?>" alt=""/><br/>
 									<a href="<?=esc_attr( $match['m_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Matched photo</a><br/>
 									<a href="<?=esc_attr( $match['f_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Main photo</a><br/>

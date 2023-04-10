@@ -109,7 +109,8 @@ final class Settings implements ArrayAccess {
 	}
 
 	public function valid_videntigraf_settings(): bool {
-		return $this->valid_identigraf_settings() || ( ! empty( $this->options['secret'] ) && ! empty( $this->options['ssserver'] ) );
+		return $this->valid_identigraf_settings() ||
+			( ! empty( $this->options['secret'] ) && ! empty( $this->options['ssserver'] ) );
 	}
 
 	public function get_api_server(): string {

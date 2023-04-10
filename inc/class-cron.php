@@ -28,7 +28,7 @@ final class Cron {
 				new WP_Error(
 					'processing_failed',
 					__( 'Unable to process the video. Unknown error.', 'i8f' ),
-				) 
+				)
 			);
 			return;
 		}
@@ -69,7 +69,7 @@ final class Cron {
 				self::reschedule_video_check( $guid, $user_id, $start_time, $threshold );
 				return;
 			}
-	
+
 			file_put_contents( "{$dir}/matches.zip", $body, FILE_APPEND ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_file_put_contents
 		}
 
