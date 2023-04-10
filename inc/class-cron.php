@@ -20,6 +20,7 @@ final class Cron {
 	}
 
 	public function identigraf_video_check( string $guid, int $user_id, int $start_time, int $threshold ): void {
+		set_time_limit( 0 );
 		$now = time();
 		if ( $now - $start_time > DAY_IN_SECONDS ) {
 			$this->send_email(
