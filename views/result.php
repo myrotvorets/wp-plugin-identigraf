@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || die();
 </head>
 <body>
 	<div class="container-fluid">
-		<table class="table table-sm table-bordered">
+		<table class="table table-sm table-bordered" aria-label="Video processing results">
 			<thead>
 				<tr>
 					<th>Captured photo</th>
@@ -34,24 +34,20 @@ defined( 'ABSPATH' ) || die();
 						<img src="<?=esc_attr( "d/{$detection_id}.jpg" ); ?>" alt="" style="position: sticky; top: 10px"/>
 					</td>
 					<td>
-						<table class="table table-sm">
-							<tbody>
-							<?php if ( empty( $data ) ) : ?>
-								<strong class="text-danger">No matches</strong>
-							<?php else : ?>
+						<?php if ( empty( $data ) ) : ?>
+							<strong class="text-danger">No matches</strong>
+						<?php else : ?>
+							<ul class="listgroup">
 								<?php foreach ( $data as $match_id => $match ) : ?>
-								<tr>
-									<td>
-										<a href="<?=esc_attr( $match['link'] ); ?>" class="fw-bold text-danger"><?=esc_html( $match['name'] ); ?></a> (<?=esc_html( (string) $match['similarity'] ); ?>%)<br/>
-										<img src="<?=esc_attr( "m/{$match_id}.jpg" ); ?>" alt=""/><br/>
-										<a href="<?=esc_attr( $match['m_photo'] ); ?>" target="_blank">Matched photo</a><br/>
-										<a href="<?=esc_attr( $match['f_photo'] ); ?>" target="_blank">Main photo</a><br/>
-									</td>
-								</tr>
+								<li class="list-group-item">
+									<a href="<?=esc_attr( $match['link'] ); ?>" class="fw-bold text-danger"><?=esc_html( $match['name'] ); ?></a> (<?=esc_html( (string) $match['similarity'] ); ?>%)<br/>
+									<img src="<?=esc_attr( "m/{$match_id}.jpg" ); ?>" alt=""/><br/>
+									<a href="<?=esc_attr( $match['m_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Matched photo</a><br/>
+									<a href="<?=esc_attr( $match['f_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Main photo</a><br/>
+								</li>
 								<?php endforeach; ?>
-							<?php endif; ?>
-							</tbody>
-						</table>
+							</ul>
+						<?php endif; ?>
 					</td>
 				</tr>
 			<?php endforeach; ?>
