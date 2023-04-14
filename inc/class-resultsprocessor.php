@@ -177,10 +177,18 @@ final class ResultsProcessor {
 					$match['m_photo'] = $map[ $match['oid'] ]['matchedPhoto'] ?? '#';
 					$match['f_photo'] = $map[ $match['oid'] ]['primaryPhoto'] ?? '#';
 				} else {
-					$match['name']    = '???';
-					$match['link']    = '#';
-					$match['m_photo'] = '#';
-					$match['f_photo'] = '#';
+					$m = [];
+					if ( preg_match( '/^!1-0-(\\d+)-(\\d+)$/', $match['oid'], $m ) ) {
+						$match['name']    = "#{$m[1]}";
+						$match['link']    = "https://myrotvorets.center/?post_type=criminal&p={$m[1]}";
+						$match['m_photo'] = "https://myrotvorets.center/?aid={$m[2]}";
+						$match['f_photo'] = '#';
+					} else {
+						$match['name']    = '???';
+						$match['link']    = '#';
+						$match['m_photo'] = '#';
+						$match['f_photo'] = '#';
+					}
 				}
 			}
 
