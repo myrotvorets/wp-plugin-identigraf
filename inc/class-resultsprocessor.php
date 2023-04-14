@@ -90,7 +90,12 @@ final class ResultsProcessor {
 		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		for ( $i = 0; $i < $zip_d->numFiles; ++$i ) {
 			$filename = $zip_d->getNameIndex( $i );
-			if ( basename( $filename ) === $filename && preg_match( '/^(\\d++)/', $filename, $m ) ) {
+			// File name format:
+			// <time>-<detection_id>--<face_width>.jpg
+			// * <time>: number of seconds from the beginning of the stream
+			// * <detection_id>: unique number of the captured face
+			// * <face_width>: width of the captured face in pixels
+			if ( basename( $filename ) === $filename && preg_match( '/^\\d+-(\\d++)/', $filename, $m ) ) {
 				$fname  = "{$m[1]}.jpg";
 				$target = "{$tmp_dir}/{$fname}";
 
