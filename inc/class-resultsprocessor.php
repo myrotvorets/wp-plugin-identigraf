@@ -219,7 +219,7 @@ final class ResultsProcessor {
 		$res = $zip->open( $archive, ZipArchive::CREATE );
 		if ( true !== $res ) {
 			// translators: %s = file name
-			throw new Exception( sprintf( __( 'Failed to create file "%s"', 'i8f' ), $archive ) );
+			throw new Exception( sprintf( __( 'Failed to create file "%s"', 'i8f' ), $archive ) );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		try {

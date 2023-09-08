@@ -23,7 +23,7 @@ final class REST_Controller /* NOSONAR */ {
 			'token',
 			[
 				'methods'             => WP_REST_Server::READABLE,
-				'permission_callback' => [ $this, 'check_level_1' ],
+				'permission_callback' => [ $this, 'check_read_capability' ],
 				'callback'            => [ $this, 'get_token' ],
 			]
 		);
@@ -33,7 +33,7 @@ final class REST_Controller /* NOSONAR */ {
 			'video-check',
 			[
 				'methods'             => WP_REST_Server::CREATABLE,
-				'permission_callback' => [ $this, 'check_level_1' ],
+				'permission_callback' => [ $this, 'check_read_capability' ],
 				'callback'            => [ $this, 'video_check' ],
 			]
 		);
@@ -42,8 +42,8 @@ final class REST_Controller /* NOSONAR */ {
 	/**
 	 * @return bool|WP_Error
 	 */
-	public function check_level_1() {
-		if ( ! current_user_can( 'level_1' ) ) {
+	public function check_read_capability() {
+		if ( ! current_user_can( 'read' ) ) {
 			return new WP_Error(
 				'rest_operation_not_allowed',
 				__( 'Access denied.', 'i8f' ),

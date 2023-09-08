@@ -30,7 +30,7 @@ abstract class Utils {
 				throw new Exception( sprintf( __( 'Unable to extract file "%1$s".', 'i8f' ), $filename ) );
 			}
 
-			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
+			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
 			$f = fopen( $target, 'wb' );
 			if ( false === $f ) {
 				throw new Exception( __( 'Unable to create temporary file.', 'i8f' ) );
