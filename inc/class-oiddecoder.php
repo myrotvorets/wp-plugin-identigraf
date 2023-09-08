@@ -29,7 +29,7 @@ final class OIDDecoder {
 					'Content-Type'  => 'application/json',
 					'Authorization' => 'Bearer ' . Utils::generate_token_for_user( $this->user_id ),
 				],
-				'body'    => wp_json_encode( $oids ),
+				'body'    => (string) wp_json_encode( $oids ),
 			]
 		);
 
