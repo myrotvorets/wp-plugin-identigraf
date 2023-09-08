@@ -56,14 +56,17 @@ final class Settings implements ArrayAccess {
 	public static function defaults(): array {
 		$defaults = self::$defaults;
 		if ( ! empty( $_ENV['MYROTVORETS_API_SERVER'] ) ) {
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$defaults['server'] = stripslashes( $_ENV['MYROTVORETS_API_SERVER'] );
 		}
 
 		if ( ! empty( $_ENV['MYROTVORETS_SS_API_SERVER'] ) ) {
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$defaults['ssserver'] = stripslashes( $_ENV['MYROTVORETS_SS_API_SERVER'] );
 		}
 
 		if ( ! empty( $_ENV['WP_IDENTIGRAF_JWT_SECRET'] ) ) {
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$defaults['secret'] = stripslashes( $_ENV['WP_IDENTIGRAF_JWT_SECRET'] );
 		}
 
