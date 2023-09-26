@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import { ProgressBar } from 'react-bootstrap';
+import React, { type ReactElement } from 'react';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import { __ } from '@wordpress/i18n';
 
 export interface UploadProgressProps {

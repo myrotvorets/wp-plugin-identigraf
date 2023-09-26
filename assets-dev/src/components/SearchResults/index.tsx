@@ -1,10 +1,15 @@
-import React, { Component, ReactNode } from 'react';
-import { Alert, Card, Col, ListGroup, Row, Spinner } from 'react-bootstrap';
+import React, { Component, type ReactNode } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Row from 'react-bootstrap/Row';
+import Spinner from 'react-bootstrap/Spinner';
 // eslint-disable-next-line import/no-named-as-default
 import Lightbox from 'yet-another-react-lightbox';
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
 import { __, sprintf } from '@wordpress/i18n';
-import API, { MatchedFace as FoundFace, CapturedFace as RecognizedFace, decodeErrorResponse } from '../../api';
+import API, { type MatchedFace as FoundFace, type CapturedFace as RecognizedFace, decodeErrorResponse } from '../../api';
 import CapturedFace from '../CapturedFace';
 import MatchedFace from '../MatchedFace';
 import WaitForm from '../WaitForm';

@@ -1,6 +1,6 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, type ReactNode } from 'react';
 import { __, sprintf } from '@wordpress/i18n';
-import { MatchedFace as FoundFace } from '../../api';
+import type { MatchedFace as FoundFace } from '../../api';
 import PhotoLink from '../PhotoLink';
 import Paragraph from '../Paragraph';
 

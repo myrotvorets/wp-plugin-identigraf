@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
 import { __, sprintf } from '@wordpress/i18n';
-import { CapturedFace as RecognizedFace } from '../../api';
+import type { CapturedFace as RecognizedFace } from '../../api';
 
 type Props = RecognizedFace;
 

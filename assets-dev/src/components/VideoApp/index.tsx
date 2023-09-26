@@ -1,7 +1,9 @@
 import React, { Component, ReactNode } from 'react';
-import { Alert, Container, Spinner } from 'react-bootstrap';
+import Alert from 'react-bootstrap/Alert';
+import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 import { Link, Route, HashRouter as Router, Routes } from 'react-router-dom';
-import { AppContext, Context } from '../../context';
+import { AppContext, type Context } from '../../context';
 import API from '../../api';
 import VideoForm from '../VideoForm';
 

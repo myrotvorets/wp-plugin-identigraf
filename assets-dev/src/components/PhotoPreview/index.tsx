@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import { Image } from 'react-bootstrap';
+import React, { type ReactElement } from 'react';
+import Image from 'react-bootstrap/Image';
 import { __ } from '@wordpress/i18n';
 
 export interface PhotoPreviewProps {

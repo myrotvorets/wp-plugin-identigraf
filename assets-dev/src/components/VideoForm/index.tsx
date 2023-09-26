@@ -1,8 +1,13 @@
-import React, { ChangeEvent, Component, FormEvent, ReactNode } from 'react';
-import { Alert, Button, Col, Form, InputGroup, Row } from 'react-bootstrap';
+import React, { type ChangeEvent, Component, type FormEvent, type ReactNode } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
 import apiFetch from '@wordpress/api-fetch';
 import { __, sprintf } from '@wordpress/i18n';
-import { ErrorResponse, VideoUploadResponse, decodeErrorResponse } from '../../api';
+import { type ErrorResponse, type VideoUploadResponse, decodeErrorResponse } from '../../api';
 import { AppContext } from '../../context';
 import UploadProgress from '../UploadProgress';
 import VideoPreview from '../VideoPreview';
@@ -131,7 +136,7 @@ export default class VideoForm extends Component<unknown, State> {
 				</Alert> }
 
 				<Form.Group controlId="video" className="mb-3">
-					<Form.Label>{ __( 'Video', 'i8fjs' ) }</Form.Label>
+					<Form.Label>{ __( 'Video:', 'i8fjs' ) }</Form.Label>
 					<Form.Control
 						name="video"
 						type="file"
@@ -143,8 +148,8 @@ export default class VideoForm extends Component<unknown, State> {
 				</Form.Group>
 
 				<Form.Group controlId="minsimilarity" className="mb-3">
-					<Form.Label>{ __( 'Minimum similarity', 'i8fj' ) }</Form.Label>
-					<InputGroup className="mb-3">
+					<Form.Label>{ __( 'Minimum similarity:', 'i8fj' ) }</Form.Label>
+					<InputGroup>
 						<Form.Control
 							name="minsimilarity"
 							type="number"

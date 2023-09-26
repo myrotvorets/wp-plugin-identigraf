@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type FunctionComponent, type MouseEvent, type ReactElement } from 'react';
 import Paragraph from '../Paragraph';
 
 interface Props {
@@ -7,9 +7,9 @@ interface Props {
 	onClick: ( link: string ) => unknown;
 }
 
-const PhotoLink: React.FC<Props> = ( { link, text, onClick } ): React.ReactElement | null => {
+const PhotoLink: FunctionComponent<Props> = ( { link, text, onClick } ): ReactElement | null => {
 	if ( link ) {
-		const onLinkClicked = ( e: React.MouseEvent<HTMLAnchorElement> ): void => {
+		const onLinkClicked = ( e: MouseEvent<HTMLAnchorElement> ): void => {
 			e.preventDefault();
 			onClick( e.currentTarget.href );
 		};

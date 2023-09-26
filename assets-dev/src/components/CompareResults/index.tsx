@@ -1,5 +1,7 @@
-import React, { Component, ReactNode } from 'react';
-import { Alert, Card, Carousel } from 'react-bootstrap';
+import React, { Component, type ReactNode } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import Card from 'react-bootstrap/Card';
+import Carousel from 'react-bootstrap/Carousel';
 import { __, sprintf } from '@wordpress/i18n';
 import API, { decodeErrorResponse } from '../../api';
 import WaitForm from '../WaitForm';

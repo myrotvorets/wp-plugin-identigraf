@@ -1,5 +1,10 @@
-import React, { ChangeEvent, Component, FormEvent, ReactNode } from 'react';
-import { Alert, Button, Col, Form, Row } from 'react-bootstrap';
+import React, { type ChangeEvent, Component, type FormEvent, type ReactNode } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
 import { Navigate } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
 import { ErrorResponse, SearchUploadResponse, decodeErrorResponse } from '../../api';
@@ -12,6 +17,7 @@ interface State {
 	uploadProgress: number | null;
 	error: string | null;
 	guid: string | null;
+	minSimilarity: number;
 }
 
 export default class SearchForm extends Component<unknown, State> {
@@ -20,6 +26,7 @@ export default class SearchForm extends Component<unknown, State> {
 		uploadProgress: null,
 		error: null,
 		guid: null,
+		minSimilarity: 30,
 	};
 
 	public static contextType = AppContext;
@@ -56,6 +63,10 @@ export default class SearchForm extends Component<unknown, State> {
 		req.open( 'POST', `${ self.i8f.iendpoint }/search` );
 		req.setRequestHeader( 'Authorization', `Bearer ${ token }` );
 		req.send( data );
+	};
+
+	private readonly _onSimilarityChange = ( { currentTarget }: FormEvent<HTMLInputElement> ): void => {
+		this.setState( { minSimilarity: currentTarget.valueAsNumber } );
 	};
 
 	private readonly _onUploadProgress = ( e: ProgressEvent<XMLHttpRequestEventTarget> ): void => {
@@ -97,7 +108,7 @@ export default class SearchForm extends Component<unknown, State> {
 	}
 
 	public render(): ReactNode {
-		const { error, guid, image, uploadProgress } = this.state;
+		const { error, guid, image, minSimilarity, uploadProgress } = this.state;
 
 		if ( guid !== null ) {
 			return <Navigate to={ `/search/${ guid }` } />;
@@ -108,7 +119,7 @@ export default class SearchForm extends Component<unknown, State> {
 				{ error && <Alert variant="danger">{ error }</Alert> }
 
 				<Form.Group controlId="photo" className="mb-3">
-					<Form.Label>{ __( 'Photo', 'i8fjs' ) }</Form.Label>
+					<Form.Label>{ __( 'Photo:', 'i8fjs' ) }</Form.Label>
 					<Form.Control
 						name="photo"
 						type="file"
@@ -117,6 +128,14 @@ export default class SearchForm extends Component<unknown, State> {
 						disabled={ uploadProgress !== null }
 						onChange={ this._onFileChange }
 					/>
+				</Form.Group>
+
+				<Form.Group controlId="minSimilarity" className="mb-3">
+					<Form.Label>{ __( 'Minimum similarity', 'i8fjs' ) }</Form.Label>
+					<InputGroup>
+						<Form.Control name="minSimilarity:" type="number" min="10" max="100" step="1" value={ minSimilarity } onInput={ this._onSimilarityChange } required />
+						<InputGroup.Text>%</InputGroup.Text>
+					</InputGroup>
 				</Form.Group>
 
 				<Row>

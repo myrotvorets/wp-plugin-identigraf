@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react';
-import { Card, ProgressBar } from 'react-bootstrap';
+import React, { type ReactElement } from 'react';
+import Card from 'react-bootstrap/Card';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import { __ } from '@wordpress/i18n';
 
 export default function WaitForm(): ReactElement {

@@ -1,12 +1,14 @@
-import React, { ChangeEvent, Component, FormEvent, ReactNode } from 'react';
-import { Alert, Button, Form } from 'react-bootstrap';
+import React, { type ChangeEvent, Component, type FormEvent, type ReactNode } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { Navigate } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
 import UploadProgress from '../UploadProgress';
 import { AppContext } from '../../context';
 import {
-	CompareUploadResponse,
-	ErrorResponse,
+	type CompareUploadResponse,
+	type ErrorResponse,
 	decodeErrorResponse,
 } from '../../api';
 
@@ -115,7 +117,7 @@ export default class CompareForm extends Component<unknown, State> {
 				{ error && <Alert variant="danger">{ error }</Alert> }
 
 				<Form.Group controlId="photo" className="mb-3">
-					<Form.Label>{ __( 'Compared photo', 'i8fjs' ) }</Form.Label>
+					<Form.Label>{ __( 'Compared photo:', 'i8fjs' ) }</Form.Label>
 					<Form.Control
 						name="photos"
 						type="file"
@@ -127,7 +129,7 @@ export default class CompareForm extends Component<unknown, State> {
 				</Form.Group>
 
 				<Form.Group controlId="photo2" className="mb-3">
-					<Form.Label>{ __( 'Reference photos (up to 10 files)', 'i8fjs' ) }</Form.Label>
+					<Form.Label>{ __( 'Reference photos (up to 10 files):', 'i8fjs' ) }</Form.Label>
 					<Form.Control
 						name="photos"
 						type="file"

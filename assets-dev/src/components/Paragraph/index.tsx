@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { type FunctionComponent, type ReactNode } from 'react';
 
-const Paragraph: React.FC = ( { children } ) => {
+interface Props {
+	children?: ReactNode;
+}
+
+const Paragraph: FunctionComponent<Props> = ( { children } ) => {
 	return children ? <p className="mb-1">{ children }</p> : null;
 };
 
