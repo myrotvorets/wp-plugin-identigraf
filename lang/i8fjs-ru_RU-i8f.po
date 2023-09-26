@@ -145,7 +145,7 @@ msgstr "Искомое лицо"
 
 #: assets-dev/src/components/SearchForm/index.tsx:122
 msgid "Photo:"
-msgstr "Фотография^"
+msgstr "Фотография:"
 
 #: assets-dev/src/components/SearchForm/index.tsx:134
 msgid "Minimum similarity"
