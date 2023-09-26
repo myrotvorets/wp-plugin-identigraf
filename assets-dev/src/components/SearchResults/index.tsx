@@ -1,6 +1,8 @@
 import React, { Component, ReactNode } from 'react';
 import { Alert, Card, Col, ListGroup, Row, Spinner } from 'react-bootstrap';
-import Lightbox from 'react-image-lightbox';
+// eslint-disable-next-line import/no-named-as-default
+import Lightbox from 'yet-another-react-lightbox';
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
 import { __, sprintf } from '@wordpress/i18n';
 import API, { MatchedFace as FoundFace, CapturedFace as RecognizedFace, decodeErrorResponse } from '../../api';
 import CapturedFace from '../CapturedFace';
@@ -50,7 +52,7 @@ export default class SearchResults extends Component<Props, State> {
 		this.setState( { lightbox: link } );
 	};
 
-	private readonly _onLightboxCloseRequest = (): void => {
+	private readonly _onLightboxClose = (): void => {
 		this.setState( { lightbox: null } );
 	};
 
@@ -166,7 +168,7 @@ export default class SearchResults extends Component<Props, State> {
 						</Card.Body>
 					) }
 				</Card>
-				{ lightbox && <Lightbox mainSrc={ lightbox } onCloseRequest={ this._onLightboxCloseRequest } /> }
+				{ lightbox && <Lightbox open={ lightbox !== null } close={ this._onLightboxClose } slides={ [ { src: lightbox } ] } fullscreen={ { auto: false } } plugins={ [ Fullscreen ] } /> }
 			</>
 		);
 	}

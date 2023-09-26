@@ -3,8 +3,7 @@ import webpackDevServer from 'webpack-dev-server';
 import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment
-const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
+import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -15,7 +14,7 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 		compare: path.resolve( __dirname, '../src/compare.tsx' ),
 		video: path.resolve( __dirname, '../src/video.tsx' ),
 		bootstrap: path.resolve( __dirname, '../src/bootstrap.scss' ),
-		lightbox: require.resolve( 'react-image-lightbox/style.css' ),
+		lightbox: require.resolve( 'yet-another-react-lightbox/styles.css' ),
 	},
 	output: {
 		path: path.resolve( __dirname, '../../assets' ),
@@ -37,7 +36,7 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 		global: true,
 	},
 	devtool: isProd ? false : 'eval-cheap-source-map',
-	mode: ( process.env.NODE_ENV || 'development' ) as 'development' | 'production' | 'none',
+	mode: ( process.env.NODE_ENV ?? 'development' ) as 'development' | 'production' | 'none',
 	resolve: {
 		extensions: [ '.mjs', '.js', '.jsx', '.ts', '.tsx' ],
 	},

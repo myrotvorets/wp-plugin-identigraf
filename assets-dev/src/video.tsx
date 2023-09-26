@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from 'react-dom';
-import VideoApp from './components/VideoApp';
+import { createRoot } from 'react-dom/client';
+import Application from './components/VideoApp';
 
-render(
+const container = document.querySelector( '.wrap' );
+const root = createRoot( container ?? document.body );
+root.render(
 	<React.StrictMode>
-		<VideoApp />
+		<Application />
 	</React.StrictMode>,
-	document.querySelector( '.wrap' ),
 );

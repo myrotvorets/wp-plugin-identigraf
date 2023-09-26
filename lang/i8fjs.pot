@@ -134,24 +134,24 @@ msgstr ""
 msgid "Photo"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:110
+#: assets-dev/src/components/SearchResults/index.tsx:112
 msgid "Loading…"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:119
+#: assets-dev/src/components/SearchResults/index.tsx:121
 msgid "Error loading captured faces"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:132
+#: assets-dev/src/components/SearchResults/index.tsx:134
 #. 1: face number
 msgid "Face %d"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:159
+#: assets-dev/src/components/SearchResults/index.tsx:161
 msgid "Search Results"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:165
+#: assets-dev/src/components/SearchResults/index.tsx:167
 msgid "Unfortunately, the system has failed to recognize any face on the photo."
 msgstr ""
 
