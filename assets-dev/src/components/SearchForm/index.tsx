@@ -133,7 +133,7 @@ export default class SearchForm extends Component<unknown, State> {
 				<Form.Group controlId="minSimilarity" className="mb-3">
 					<Form.Label>{ __( 'Minimum similarity', 'i8fjs' ) }</Form.Label>
 					<InputGroup>
-						<Form.Control name="minSimilarity:" type="number" min="10" max="100" step="1" value={ minSimilarity } onInput={ this._onSimilarityChange } required />
+						<Form.Control name="minSimilarity" type="number" min="10" max="100" step="1" value={ minSimilarity } onInput={ this._onSimilarityChange } required />
 						<InputGroup.Text>%</InputGroup.Text>
 					</InputGroup>
 				</Form.Group>
