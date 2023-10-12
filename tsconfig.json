@@ -8,6 +8,10 @@
         "noUnusedLocals": true,
         "noUnusedParameters": false,
         "noFallthroughCasesInSwitch": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
         "esModuleInterop": true
     },
     "include": ["assets-dev/webpack.*.ts", "assets-dev/.webpack/*.ts", "assets-dev/src/**/*.ts", "assets-dev/src/**/*.tsx"],

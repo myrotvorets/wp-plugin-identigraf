@@ -9,7 +9,7 @@ type Props = FoundFace & {
 };
 
 export default class MatchedFace extends Component<Props, unknown> {
-	public render(): ReactNode {
+	public override render(): ReactNode {
 		const { country, face, link, matchedPhoto, name, onClick, primaryPhoto, similarity } = this.props;
 		return (
 			<>
@@ -19,6 +19,7 @@ export default class MatchedFace extends Component<Props, unknown> {
 					rel="noopener noreferrer"
 					className="text-danger fw-bold text-decoration-none fs-3"
 				>
+					{ /* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */ }
 					{ name || __( 'Unknown person', 'i8fjs' ) }
 				</a>
 				<img

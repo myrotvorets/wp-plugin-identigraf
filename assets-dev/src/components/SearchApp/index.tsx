@@ -15,11 +15,11 @@ interface State {
 
 function SearchResultsRoute(): ReactElement {
 	const { guid } = useParams();
-	return <SearchResults guid={ guid as string } />;
+	return <SearchResults guid={ guid! } />;
 }
 
 export default class SearchApp extends Component<unknown, State> {
-	public state: Readonly<State> = {
+	public override state: Readonly<State> = {
 		error: null,
 		ctx: {
 			token: '',
@@ -28,11 +28,11 @@ export default class SearchApp extends Component<unknown, State> {
 
 	private _timerId = 0;
 
-	public componentDidMount(): void {
+	public override componentDidMount(): void {
 		this.refreshToken();
 	}
 
-	public componentWillUnmount(): void {
+	public override componentWillUnmount(): void {
 		if ( this._timerId > 0 ) {
 			self.clearTimeout( this._timerId );
 		}
@@ -48,7 +48,7 @@ export default class SearchApp extends Component<unknown, State> {
 		} );
 	};
 
-	public render(): ReactNode {
+	public override render(): ReactNode {
 		const { ctx, error } = this.state;
 		return (
 			<Container>

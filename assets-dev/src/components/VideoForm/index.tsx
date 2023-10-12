@@ -22,7 +22,7 @@ interface State {
 }
 
 export default class VideoForm extends Component<unknown, State> {
-	public state: Readonly<State> = {
+	public override state: Readonly<State> = {
 		video: '',
 		uploadProgress: null,
 		error: null,
@@ -30,7 +30,7 @@ export default class VideoForm extends Component<unknown, State> {
 		minSimilarity: 0,
 	};
 
-	public static contextType = AppContext;
+	public static override contextType = AppContext;
 	declare public context: React.ContextType<typeof AppContext>;
 
 	private readonly _onFileChange = ( { currentTarget }: ChangeEvent<HTMLInputElement> ): void => {
@@ -41,7 +41,7 @@ export default class VideoForm extends Component<unknown, State> {
 			const type = f.type;
 			const reader = new FileReader();
 			reader.addEventListener( 'load', ( { target }: ProgressEvent<FileReader> ): void => {
-				const buffer = ( target as FileReader ).result as ArrayBuffer | null;
+				const buffer = target!.result as ArrayBuffer | null;
 				if ( buffer ) {
 					const blob = new Blob( [ new Uint8Array( buffer ) ], { type } );
 					this.setState( { video: URL.createObjectURL( blob ) } );
@@ -122,7 +122,7 @@ export default class VideoForm extends Component<unknown, State> {
 		this.setState( { uploadProgress: null, error } );
 	}
 
-	public render(): ReactNode {
+	public override render(): ReactNode {
 		const { error, guid, minSimilarity, uploadProgress, video } = this.state;
 
 		return (

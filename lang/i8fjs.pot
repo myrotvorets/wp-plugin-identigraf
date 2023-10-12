@@ -19,11 +19,11 @@ msgstr ""
 msgid "Unknown error."
 msgstr ""
 
-#: assets-dev/src/api/index.ts:16
+#: assets-dev/src/api/index.ts:17
 msgid "Error getting the authentication token"
 msgstr ""
 
-#: assets-dev/src/api/index.ts:52
+#: assets-dev/src/api/index.ts:53
 msgid "Error communicating with the server"
 msgstr ""
 
@@ -103,28 +103,28 @@ msgid ""
 "contains multiple faces"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:22
+#: assets-dev/src/components/MatchedFace/index.tsx:23
 msgid "Unknown person"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:27
+#: assets-dev/src/components/MatchedFace/index.tsx:28
 msgid "Face"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:30
+#: assets-dev/src/components/MatchedFace/index.tsx:31
 #. 1: country name
 msgid "Country: %s"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:31
+#: assets-dev/src/components/MatchedFace/index.tsx:32
 msgid "Matched photo"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:32
+#: assets-dev/src/components/MatchedFace/index.tsx:33
 msgid "Primary photo"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:33
+#: assets-dev/src/components/MatchedFace/index.tsx:34
 #. 1: similarity
 msgid "Similarity: %1$d%%"
 msgstr ""

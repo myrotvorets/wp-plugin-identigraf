@@ -8,6 +8,7 @@ interface TokenResponse {
 	token: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export default class API {
 	public static getApiToken(): Promise<string> {
 		return apiFetch<TokenResponse>( { path: '/identigraf/v2/token' } )

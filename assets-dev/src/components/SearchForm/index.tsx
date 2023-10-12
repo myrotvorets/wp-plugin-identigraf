@@ -21,7 +21,7 @@ interface State {
 }
 
 export default class SearchForm extends Component<unknown, State> {
-	public state: Readonly<State> = {
+	public override state: Readonly<State> = {
 		image: '',
 		uploadProgress: null,
 		error: null,
@@ -29,7 +29,7 @@ export default class SearchForm extends Component<unknown, State> {
 		minSimilarity: 30,
 	};
 
-	public static contextType = AppContext;
+	public static override contextType = AppContext;
 	declare public context: React.ContextType<typeof AppContext>;
 
 	private readonly _onFileChange = ( { currentTarget }: ChangeEvent<HTMLInputElement> ): void => {
@@ -39,7 +39,7 @@ export default class SearchForm extends Component<unknown, State> {
 		if ( f?.type.startsWith( 'image/' ) ) {
 			const reader = new FileReader();
 			reader.addEventListener( 'load', ( { target }: ProgressEvent<FileReader> ): void => {
-				this.setState( { image: ( target as FileReader ).result as string } );
+				this.setState( { image: target!.result as string } );
 			} );
 
 			reader.readAsDataURL( f );
@@ -107,7 +107,7 @@ export default class SearchForm extends Component<unknown, State> {
 		this.setState( { uploadProgress: null, error } );
 	}
 
-	public render(): ReactNode {
+	public override render(): ReactNode {
 		const { error, guid, image, minSimilarity, uploadProgress } = this.state;
 
 		if ( guid !== null ) {
