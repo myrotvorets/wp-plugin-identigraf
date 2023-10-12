@@ -21,23 +21,23 @@ interface State {
 }
 
 export default class CompareResults extends Component<Props, State> {
-	public state: Readonly<State> = {
+	public override state: Readonly<State> = {
 		state: 'check',
 		error: '',
 		results: {},
 		numFiles: 0,
 	};
 
-	public static contextType = AppContext;
+	public static override contextType = AppContext;
 	declare public context: React.ContextType<typeof AppContext>;
 
 	private _timerId: number | null = null;
 
-	public componentDidMount(): void {
+	public override componentDidMount(): void {
 		this._timerId = self.setTimeout( this._checkStatus, 0 );
 	}
 
-	public componentWillUnmount(): void {
+	public override componentWillUnmount(): void {
 		if ( this._timerId !== null ) {
 			self.clearTimeout( this._timerId );
 		}
@@ -110,7 +110,7 @@ export default class CompareResults extends Component<Props, State> {
 		);
 	}
 
-	public render(): ReactNode {
+	public override render(): ReactNode {
 		const { error, state } = this.state;
 		if ( state === 'check' ) {
 			return <WaitForm />;

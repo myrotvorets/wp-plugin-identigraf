@@ -30,7 +30,7 @@ interface State {
 }
 
 export default class SearchResults extends Component<Props, State> {
-	public state: Readonly<State> = {
+	public override state: Readonly<State> = {
 		state: 'check',
 		error: '',
 		capturedFaces: [],
@@ -38,16 +38,16 @@ export default class SearchResults extends Component<Props, State> {
 		lightbox: null,
 	};
 
-	public static contextType = AppContext;
+	public static override contextType = AppContext;
 	declare public context: React.ContextType<typeof AppContext>;
 
 	private _timerId = 0;
 
-	public componentDidMount(): void {
+	public override componentDidMount(): void {
 		this._timerId = self.setTimeout( this._checkStatus, 0 );
 	}
 
-	public componentWillUnmount(): void {
+	public override componentWillUnmount(): void {
 		if ( this._timerId !== 0 ) {
 			self.clearTimeout( this._timerId );
 		}
@@ -93,7 +93,7 @@ export default class SearchResults extends Component<Props, State> {
 		Promise.all( capturedFaces.map( ( { faceID } ) => API.getMatchedFaces( guid, faceID, this.context.token ) ) )
 			.then( ( responses ) => {
 				responses.forEach( ( response ) => this._addMatches( response.success ? response.matches : null ) );
-				return this.setState( { state: 'done' } );
+				this.setState( { state: 'done' } );
 			} )
 			.catch( ( e ) => console.error( e ) );
 	}
@@ -149,7 +149,7 @@ export default class SearchResults extends Component<Props, State> {
 		);
 	};
 
-	public render(): ReactNode {
+	public override render(): ReactNode {
 		const { capturedFaces, error, lightbox, state } = this.state;
 		if ( state === 'check' ) {
 			return <WaitForm />;
@@ -173,7 +173,7 @@ export default class SearchResults extends Component<Props, State> {
 						</Card.Body>
 					) }
 				</Card>
-				{ lightbox && <Lightbox open={ lightbox !== null } close={ this._onLightboxClose } slides={ [ { src: lightbox } ] } fullscreen={ { auto: false } } plugins={ [ Fullscreen ] } /> }
+				{ lightbox && <Lightbox open close={ this._onLightboxClose } slides={ [ { src: lightbox } ] } fullscreen={ { auto: false } } plugins={ [ Fullscreen ] } /> }
 			</>
 		);
 	}

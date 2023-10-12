@@ -14,7 +14,8 @@
         "no-invalid-this": "off",
         "no-unused-vars": "off",
         "no-use-before-define": "off",
-        "import/named": "off"
+        "import/named": "off",
+        "dot-notation": "off"
     },
     "env": {
         "browser": true

@@ -5,7 +5,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env[ 'NODE_ENV' ] === 'production';
 
 const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 	context: path.resolve( __dirname, '..' ),
@@ -36,7 +36,7 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 		global: true,
 	},
 	devtool: isProd ? false : 'eval-cheap-source-map',
-	mode: ( process.env.NODE_ENV ?? 'development' ) as 'development' | 'production' | 'none',
+	mode: ( process.env[ 'NODE_ENV' ] ?? 'development' ) as 'development' | 'production' | 'none',
 	resolve: {
 		extensions: [ '.mjs', '.js', '.jsx', '.ts', '.tsx' ],
 	},

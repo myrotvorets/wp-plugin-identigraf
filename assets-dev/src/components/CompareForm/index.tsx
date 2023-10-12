@@ -21,7 +21,7 @@ interface State {
 }
 
 export default class CompareForm extends Component<unknown, State> {
-	public state: Readonly<State> = {
+	public override state: Readonly<State> = {
 		error: null,
 		uploadProgress: null,
 		hasPhoto1: false,
@@ -29,7 +29,7 @@ export default class CompareForm extends Component<unknown, State> {
 		guid: null,
 	};
 
-	public static contextType = AppContext;
+	public static override contextType = AppContext;
 	declare public context: React.ContextType<typeof AppContext>;
 
 	private readonly _onFileChange = ( { currentTarget }: ChangeEvent<HTMLInputElement> ): void => {
@@ -105,7 +105,7 @@ export default class CompareForm extends Component<unknown, State> {
 		this.setState( { uploadProgress: null, error } );
 	}
 
-	public render(): ReactNode {
+	public override render(): ReactNode {
 		const { error, guid, uploadProgress } = this.state;
 
 		if ( guid !== null ) {

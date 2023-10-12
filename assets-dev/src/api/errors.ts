@@ -10,7 +10,7 @@ const errors: Record<string, string> = {
 };
 
 export function decodeErrorCode( code: string ): string {
-	return errors[ code ] || errors.UNKNOWN_ERROR;
+	return errors[ code ] ?? errors[ 'UNKNOWN_ERROR' ]!;
 }
 
 export function decodeErrorResponse( r: ErrorResponse ): string {
