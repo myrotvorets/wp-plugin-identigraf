@@ -22,7 +22,7 @@
     "yet-another-react-lightbox": "^3.12.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
+    "@babel/core": "^7.23.2",
     "@babel/plugin-transform-class-properties": "^7.22.5",
     "@babel/plugin-transform-numeric-separator": "^7.22.11",
     "@babel/plugin-transform-optional-chaining": "^7.23.0",
@@ -49,7 +49,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.31",
     "postcss-loader": "^7.3.3",
-    "sass": "^1.69.2",
+    "sass": "^1.69.3",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
