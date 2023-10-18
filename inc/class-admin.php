@@ -45,7 +45,7 @@ final class Admin {
 
 		if ( $this->search_slug && $this->compare_slug && $this->video_slug ) {
 			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
-			
+
 			$settings = Settings::instance();
 			if ( ! $settings->valid_identigraf_settings() ) {
 				add_action( 'load-' . $this->search_slug, [ $this, 'redirect_to_settings' ] );

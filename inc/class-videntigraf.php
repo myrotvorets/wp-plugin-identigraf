@@ -47,7 +47,7 @@ final class VIDentigraF {
 		$json = json_decode( $body );
 		if ( is_object( $json ) && isset( $json->success ) ) {
 			/** @psalm-var APIErrorResponse|CheckInProgress|ProcessingCompleted $json */
-			if ( true === $json->success ) {
+			if ( true === $json->success ) { // NOSONAR
 				/** @psalm-suppress RedundantConditionGivenDocblockType -- this looks like a bug in Psalm */
 				if ( 'complete' === $json->status ) {
 					return new VideoProcessingStats( $json->stats );

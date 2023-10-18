@@ -116,7 +116,7 @@ export default class CompareForm extends Component<unknown, State> {
 			<Form onSubmit={ this._onFormSubmit } encType="multipart/form-data">
 				{ error && <Alert variant="danger">{ error }</Alert> }
 
-				<Form.Group controlId="photo" className="mb-3">
+				<Form.Group controlId="photo1" className="mb-3">
 					<Form.Label>{ __( 'Compared photo:', 'i8fjs' ) }</Form.Label>
 					<Form.Control
 						name="photos"
