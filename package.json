@@ -33,7 +33,7 @@
     "@babel/preset-typescript": "^7.23.2",
     "@myrotvorets/eslint-config-myrotvorets-ts": "^2.22.6",
     "@myrotvorets/po2json": "^1.0.2",
-    "@types/node": "^20.8.9",
+    "@types/node": "^20.8.10",
     "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.7",
     "@wordpress/babel-plugin-makepot": "^5.28.0",
