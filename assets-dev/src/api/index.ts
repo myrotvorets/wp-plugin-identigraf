@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 import type { CompareStatusResponse, ErrorResponse, MatchedFacesResponse, SearchStatusResponse } from './types';
+import { token } from '../signals';
 export * from './errors';
 export * from './types';
 
@@ -10,24 +11,25 @@ interface TokenResponse {
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export default class API {
-	public static getApiToken(): Promise<string> {
-		return apiFetch<TokenResponse>( { path: '/identigraf/v2/token' } )
-			.then( ( data: TokenResponse ) => data.token )
-			.catch( () => {
-				throw new Error( __( 'Error getting the authentication token', 'i8fjs' ) );
-			} );
+	public static async getApiToken(): Promise<void> {
+		try {
+			const data = await apiFetch<TokenResponse>( { path: '/identigraf/v2/token' } );
+			token.value = data.token;
+		} catch {
+			throw new Error( __( 'Error getting the authentication token', 'i8fjs' ) );
+		}
 	}
 
-	public static checkCompareStatus( guid: string, token: string ): Promise<CompareStatusResponse | ErrorResponse> {
-		return API.get( `/compare/${ guid }`, token );
+	public static checkCompareStatus( guid: string ): Promise<CompareStatusResponse | ErrorResponse> {
+		return API.get( `/compare/${ guid }`, token.value );
 	}
 
-	public static checkSearchStatus( guid: string, token: string ): Promise<SearchStatusResponse | ErrorResponse> {
-		return API.get( `/search/${ guid }`, token );
+	public static checkSearchStatus( guid: string ): Promise<SearchStatusResponse | ErrorResponse> {
+		return API.get( `/search/${ guid }`, token.value );
 	}
 
-	public static getMatchedFaces( guid: string, faceID: number, token: string ): Promise<MatchedFacesResponse | ErrorResponse> {
-		return API.get( `/search/${ guid }/matches/${ faceID }/0/20`, token );
+	public static getMatchedFaces( guid: string, faceID: number ): Promise<MatchedFacesResponse | ErrorResponse> {
+		return API.get( `/search/${ guid }/matches/${ faceID }/0/20`, token.value );
 	}
 
 	private static get<R>( endpoint: string, auth: string ): Promise<R | ErrorResponse> {

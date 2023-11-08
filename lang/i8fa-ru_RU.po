@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IDentigraF 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/identigraf\n"
-"POT-Creation-Date: 2023-04-09T13:47:27+00:00\n"
+"POT-Creation-Date: 2023-11-08T16:57:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,7 @@ msgstr "Загрузка видео"
 msgid "Video"
 msgstr "Видео"
 
-#: inc/class-admin.php:144
+#: inc/class-admin.php:148
 msgid "Settings"
 msgstr "Настройки"
 

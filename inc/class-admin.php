@@ -97,9 +97,14 @@ final class Admin {
 				true
 			);
 
+			$api_server    = Settings::instance()->get_api_server();
+			$ss_api_server = Settings::instance()->get_ss_api_server();
+
 			wp_localize_script( 'i8f', 'i8f', [
-				'iendpoint' => rtrim( Settings::instance()->get_api_server(), '/' ) . '/identigraf/v2',
-				'vendpoint' => rtrim( Settings::instance()->get_ss_api_server(), '/' ) . '/videntigraf/v1',
+				'aendpoint' => rtrim( $api_server, '/' ) . '/identigraf-auth/v2',
+				'iendpoint' => rtrim( $api_server, '/' ) . '/identigraf/v2',
+				'uendpoint' => rtrim( $api_server, '/' ) . '/identigraf-upload/v1',
+				'vendpoint' => rtrim( $ss_api_server, '/' ) . '/videntigraf/v1',
 				'title'     => get_admin_page_title(),
 				'baseurl'   => defined( 'PSB_PRIMARY_DOMAIN' ) ? get_bloginfo( 'url' ) : 'https://myrotvorets.center',
 			] );

@@ -79,6 +79,17 @@
     text-align: var(--#{$variable-prefix}body-text-align);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba($black, 0);
+
+    img.SmallLoader {
+        display: block;
+        animation: rotate 4s linear infinite;
+    }
+    
+    @keyframes rotate {
+        0%   { transform: rotate(0deg); }
+        50%  { transform: rotate(180deg); }
+        100% { transform: rotate(359deg); }
+    }
 }
 
 :root {

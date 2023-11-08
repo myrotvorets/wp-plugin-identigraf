@@ -1,9 +1,10 @@
+import path from 'node:path';
 import { type Configuration, DefinePlugin } from 'webpack';
 import webpackDevServer from 'webpack-dev-server';
-import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
+import type { Config as SVGOConfig } from 'svgo';
 
 const isProd = process.env[ 'NODE_ENV' ] === 'production';
 
@@ -67,6 +68,33 @@ const config: Configuration & { devServer: webpackDevServer.Configuration } = {
 			{
 				test: /\.(png|jpe?g|webp)$/u,
 				type: 'asset/resource',
+			},
+			{
+				test: /\.svg$/u,
+				type: 'asset',
+				parser: {
+					dataUrlCondition: {
+						maxSize: 1024,
+					},
+				},
+				use: [
+					{
+						loader: 'svgo-loader',
+						options: {
+							multipass: true,
+							plugins: [
+								{
+									name: 'preset-default',
+									params: {
+										overrides: {
+											removeEmptyContainers: false,
+										},
+									},
+								},
+							],
+						} as SVGOConfig,
+					},
+				],
 			},
 			{
 				test: /\.s?css$/u,

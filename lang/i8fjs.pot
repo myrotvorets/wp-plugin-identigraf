@@ -19,182 +19,189 @@ msgstr ""
 msgid "Unknown error."
 msgstr ""
 
-#: assets-dev/src/api/index.ts:17
+#: assets-dev/src/api/index.ts:19
 msgid "Error getting the authentication token"
 msgstr ""
 
-#: assets-dev/src/api/index.ts:53
+#: assets-dev/src/api/index.ts:55
 msgid "Error communicating with the server"
 msgstr ""
 
-#: assets-dev/src/components/CapturedFace/index.tsx:10
-msgid "Recognized face"
-msgstr ""
-
-#: assets-dev/src/components/CapturedFace/index.tsx:13
-#. 1: min similarity, 2: max similarity
-msgid "%1$d…%2$d%%"
-msgstr ""
-
-#: assets-dev/src/components/CompareForm/index.tsx:100
-#: assets-dev/src/components/SearchForm/index.tsx:102
-#: assets-dev/src/components/VideoForm/index.tsx:111
-msgid "Unknown error while analyzing the server response"
-msgstr ""
-
-#: assets-dev/src/components/CompareForm/index.tsx:120
-msgid "Compared photo:"
-msgstr ""
-
-#: assets-dev/src/components/CompareForm/index.tsx:132
-msgid "Reference photos (up to 10 files):"
-msgstr ""
-
-#: assets-dev/src/components/CompareForm/index.tsx:148
-#: assets-dev/src/components/SearchForm/index.tsx:150
-#: assets-dev/src/components/VideoForm/index.tsx:175
+#: assets-dev/src/components/CompareForm.tsx:105
+#: assets-dev/src/components/SearchForm.tsx:127
+#: assets-dev/src/components/VideoForm.tsx:147
 msgid "Submit"
 msgstr ""
 
-#: assets-dev/src/components/CompareForm/index.tsx:75
-#: assets-dev/src/components/SearchForm/index.tsx:78
-#: assets-dev/src/components/VideoForm/index.tsx:79
+#: assets-dev/src/components/CompareForm.tsx:45
+#: assets-dev/src/components/SearchForm.tsx:61
+#: assets-dev/src/components/VideoForm.tsx:69
 msgid "Failed to upload the file"
 msgstr ""
 
-#: assets-dev/src/components/CompareForm/index.tsx:79
-#: assets-dev/src/components/SearchForm/index.tsx:82
-#: assets-dev/src/components/VideoForm/index.tsx:83
-msgid "Request has timed out"
-msgstr ""
-
-#: assets-dev/src/components/CompareForm/index.tsx:83
-#: assets-dev/src/components/SearchForm/index.tsx:86
-#: assets-dev/src/components/VideoForm/index.tsx:87
-msgid "Upload aborted"
-msgstr ""
-
-#: assets-dev/src/components/CompareForm/index.tsx:95
-#: assets-dev/src/components/SearchForm/index.tsx:97
-#: assets-dev/src/components/VideoForm/index.tsx:106
+#: assets-dev/src/components/CompareForm.tsx:54
+#: assets-dev/src/components/SearchForm.tsx:70
+#: assets-dev/src/components/VideoForm.tsx:87
 msgid "Unexpected authentication error"
 msgstr ""
 
-#: assets-dev/src/components/CompareResults/index.tsx:101
-msgid "Compared photo"
+#: assets-dev/src/components/CompareForm.tsx:59
+#: assets-dev/src/components/SearchForm.tsx:75
+#: assets-dev/src/components/VideoForm.tsx:92
+msgid "Unknown error while analyzing the server response"
 msgstr ""
 
-#: assets-dev/src/components/CompareResults/index.tsx:78
-#. 1: photo number
-msgid "Photo %1$d"
+#: assets-dev/src/components/CompareForm.tsx:72
+msgid "Compare"
 msgstr ""
 
-#: assets-dev/src/components/CompareResults/index.tsx:81
-msgid "Similarity:"
+#: assets-dev/src/components/CompareForm.tsx:77
+msgid "Compared photo:"
 msgstr ""
 
-#: assets-dev/src/components/CompareResults/index.tsx:91
-msgid "Comparison Results"
+#: assets-dev/src/components/CompareForm.tsx:89
+msgid "Reference photos (up to 10 files):"
 msgstr ""
 
-#: assets-dev/src/components/CompareResults/index.tsx:95
+#: assets-dev/src/components/CompareResults/NoResults/index.tsx:13
 msgid ""
 "Unfortunately, the system has failed to recognize any face, or the photo "
 "contains multiple faces"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:23
+#: assets-dev/src/components/CompareResults/NoResults/index.tsx:16
+msgid "Back to comparison"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/NoResults/index.tsx:9
+#: assets-dev/src/components/CompareResults/Results/index.tsx:15
+msgid "Comparison Results"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/Results/index.tsx:22
+msgid "Compared photo"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/Results/index.tsx:33
+#. 1: photo number
+msgid "Photo %1$d"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/Results/index.tsx:36
+msgid "Similarity:"
+msgstr ""
+
+#: assets-dev/src/components/CompareResults/Results/index.tsx:41
+msgid "New comparison"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm.tsx:104
+#: assets-dev/src/components/VideoForm.tsx:122
+msgid "Minimum similarity:"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm.tsx:120
+msgid "Face to search"
+msgstr ""
+
+#: assets-dev/src/components/SearchForm.tsx:92
+msgid "Photo:"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/CapturedFace/Face/index.tsx:13
+msgid "Similarity"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/CapturedFace/Face/index.tsx:14
+#. 1: min similarity, 2: max similarity
+msgid "%1$d…%2$d%%"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/CapturedFace/index.tsx:19
+#. 1 - face number
+msgid "Face %d"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/MatchedFaces/Face/index.tsx:31
 msgid "Unknown person"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:28
+#: assets-dev/src/components/SearchResults/MatchedFaces/Face/index.tsx:42
 msgid "Face"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:31
+#: assets-dev/src/components/SearchResults/MatchedFaces/Face/index.tsx:46
 #. 1: country name
 msgid "Country: %s"
 msgstr ""
 
-#: assets-dev/src/components/MatchedFace/index.tsx:32
-msgid "Matched photo"
-msgstr ""
-
-#: assets-dev/src/components/MatchedFace/index.tsx:33
-msgid "Primary photo"
-msgstr ""
-
-#: assets-dev/src/components/MatchedFace/index.tsx:34
+#: assets-dev/src/components/SearchResults/MatchedFaces/Face/index.tsx:49
 #. 1: similarity
 msgid "Similarity: %1$d%%"
 msgstr ""
 
-#: assets-dev/src/components/PhotoPreview/index.tsx:10
-msgid "Face to search"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:122
-msgid "Photo:"
-msgstr ""
-
-#: assets-dev/src/components/SearchForm/index.tsx:134
-msgid "Minimum similarity"
-msgstr ""
-
-#: assets-dev/src/components/SearchResults/index.tsx:117
+#: assets-dev/src/components/SearchResults/MatchedFaces/index.tsx:50
 msgid "Loading…"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:126
-msgid "Error loading captured faces"
+#: assets-dev/src/components/SearchResults/MatchedFaces/index.tsx:58
+#. 1 - error message
+msgid "Error loading faces: %s"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:139
-#. 1: face number
-msgid "Face %d"
+#: assets-dev/src/components/SearchResults/MatchedFaces/index.tsx:64
+msgid "No matches"
 msgstr ""
 
-#: assets-dev/src/components/SearchResults/index.tsx:166
-msgid "Search Results"
-msgstr ""
-
-#: assets-dev/src/components/SearchResults/index.tsx:172
+#: assets-dev/src/components/SearchResults/NoResults/index.tsx:12
 msgid "Unfortunately, the system has failed to recognize any face on the photo."
 msgstr ""
 
-#: assets-dev/src/components/UploadProgress/index.tsx:16
+#: assets-dev/src/components/SearchResults/NoResults/index.tsx:14
+msgid "Back to search."
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/NoResults/index.tsx:9
+msgid "Nothing Found"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/Results/index.tsx:16
+msgid "Search Results"
+msgstr ""
+
+#: assets-dev/src/components/SearchResults/Results/index.tsx:25
+msgid "New search"
+msgstr ""
+
+#: assets-dev/src/components/UploadProgress.tsx:15
 msgid "Upload:"
 msgstr ""
 
-#: assets-dev/src/components/VideoForm/index.tsx:103
-msgid "Unexpected error"
-msgstr ""
-
-#: assets-dev/src/components/VideoForm/index.tsx:133
+#: assets-dev/src/components/VideoForm.tsx:104
 msgid "Video has been successfully uploaded."
 msgstr ""
 
-#: assets-dev/src/components/VideoForm/index.tsx:134
+#: assets-dev/src/components/VideoForm.tsx:105
 #. %s = Video GUID
 msgid "Video ID: %s"
 msgstr ""
 
-#: assets-dev/src/components/VideoForm/index.tsx:135
+#: assets-dev/src/components/VideoForm.tsx:106
 msgid "Results will be sent to your email address."
 msgstr ""
 
-#: assets-dev/src/components/VideoForm/index.tsx:139
+#: assets-dev/src/components/VideoForm.tsx:110
 msgid "Video:"
 msgstr ""
 
-#: assets-dev/src/components/VideoForm/index.tsx:151
-msgid "Minimum similarity:"
+#: assets-dev/src/components/VideoForm.tsx:84
+msgid "Unexpected error"
 msgstr ""
 
-#: assets-dev/src/components/WaitForm/index.tsx:11
-msgid "Please wait…"
-msgstr ""
-
-#: assets-dev/src/components/WaitForm/index.tsx:9
+#: assets-dev/src/components/WaitForm.tsx:10
 msgid "Processing the request"
+msgstr ""
+
+#: assets-dev/src/components/WaitForm.tsx:12
+msgid "Please wait…"
 msgstr ""

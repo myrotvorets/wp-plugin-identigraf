@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-09T13:47:26+00:00\n"
+"POT-Creation-Date: 2023-11-08T17:01:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: i8f\n"
 
 #. Plugin Name of the plugin
@@ -34,22 +34,22 @@ msgstr ""
 msgid "https://myrotvorets.center/"
 msgstr ""
 
-#: inc/class-cron.php:30
+#: inc/class-cron.php:31
 msgid "Unable to process the video. Unknown error."
 msgstr ""
 
 #. translators: 1 - blog name
-#: inc/class-cron.php:123
+#: inc/class-cron.php:124
 msgid "[%1$s] VIDentigraF: Video Processing Results"
 msgstr ""
 
 #. translators: 1 - video GUID, 2 - error message
-#: inc/class-cron.php:126
+#: inc/class-cron.php:127
 msgid "There was an error processing the video %1$s: %2$s"
 msgstr ""
 
 #. translators: 1 - video GUID, 2 - video link
-#: inc/class-cron.php:129
+#: inc/class-cron.php:130
 msgid ""
 "Video %1$s has been processed.\n"
 "\n"
@@ -80,15 +80,15 @@ msgid "Bad request."
 msgstr ""
 
 #. translators: %s = file name
-#: inc/class-resultsprocessor.php:209
+#: inc/class-resultsprocessor.php:222
 msgid "Failed to create file \"%s\""
 msgstr ""
 
-#: inc/class-resultsprocessor.php:226
+#: inc/class-resultsprocessor.php:239
 msgid "Failed to add a file to the archive."
 msgstr ""
 
-#: inc/class-resultsprocessor.php:232
+#: inc/class-resultsprocessor.php:245
 msgid "Failed to archive results."
 msgstr ""
 
