@@ -12,7 +12,7 @@ interface Props {
 
 export function SearchResults( { guid }: Readonly<Props> ): ReactNode {
 	const [ error, setError ] = useState( '' );
-	const [ checkInterval, setCheckInterval ] = useState<number>( 0 );
+	const [ checkInterval, setCheckInterval ] = useState( 0 );
 	const [ trigger, setTrigger ] = useState( 0 );
 	const [ capturedFaces, setCapturedFaces ] = useState<RecognizedFace[] | null>( null );
 

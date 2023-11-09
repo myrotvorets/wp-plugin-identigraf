@@ -12,7 +12,7 @@ interface Props {
 
 export function CompareResults( { guid }: Readonly<Props> ): ReactNode {
 	const [ error, setError ] = useState( '' );
-	const [ checkInterval, setCheckInterval ] = useState<number>( 0 );
+	const [ checkInterval, setCheckInterval ] = useState( 0 );
 	const [ trigger, setTrigger ] = useState( 0 );
 	const [ results, setResults ] = useState<Record<string, number>>( {} );
 	const [ done, setDone ] = useState( false );

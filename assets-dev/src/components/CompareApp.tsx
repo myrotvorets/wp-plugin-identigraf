@@ -15,7 +15,7 @@ function CompareResultsRoute(): ReactNode {
 
 export function CompareApp(): ReactNode {
 	const [ error, setError ] = useState( '' );
-	const [ checkInterval, setCheckInterval ] = useState<number>( 0 );
+	const [ checkInterval, setCheckInterval ] = useState( 0 );
 	const [ trigger, setTrigger ] = useState( 0 );
 
 	const refreshToken = (): void => {

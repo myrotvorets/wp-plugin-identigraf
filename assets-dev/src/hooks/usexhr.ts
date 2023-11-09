@@ -16,7 +16,7 @@ export interface UseXHRResult {
 }
 
 export const useXHR = ( url: string, data: FormData | undefined ): UseXHRResult => {
-	const [ progress, setProgress ] = useState<number>( NaN );
+	const [ progress, setProgress ] = useState( NaN );
 	const [ error, setError ] = useState<Error | null>( null );
 	const [ response, setResponse ] = useState<XHRResponse | null>( null );
 	const [ finished, setFinished ] = useState( false );

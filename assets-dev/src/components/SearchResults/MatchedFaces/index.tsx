@@ -19,7 +19,7 @@ export function MatchedFaces( { faceID, guid }: Readonly<Props> ): ReactNode {
 	const [ matchedFaces, setMatchedFaces ] = useState<FoundFace[]>( [] );
 	const [ error, setError ] = useState( '' );
 	const [ done, setDone ] = useState( false );
-	const [ lightbox, setLightbox ] = useState<string>( '' );
+	const [ lightbox, setLightbox ] = useState( '' );
 
 	const onFaceLinkClicked = useCallback( ( link: string ): void => {
 		setLightbox( link );
