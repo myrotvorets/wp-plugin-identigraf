@@ -29,7 +29,7 @@
     "@babel/plugin-transform-numeric-separator": "^7.23.4",
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
     "@babel/plugin-transform-react-jsx": "^7.23.4",
-    "@babel/plugin-transform-typescript": "^7.23.5",
+    "@babel/plugin-transform-typescript": "^7.23.6",
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-typescript": "^7.23.3",
     "@myrotvorets/eslint-config-myrotvorets-ts": "^2.24.0",
