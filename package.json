@@ -44,7 +44,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
     "cssnano": "^6.0.1",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-formatter-gha": "^1.4.3",
     "eslint-plugin-disable": "^2.0.3",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
