@@ -14,6 +14,7 @@ namespace {
 	define( 'ARRAY_A', 'ARRAY_A' );
 	define( 'ARRAY_N', 'ARRAY_N' );
 
+	define( 'ABSPATH', '/wp' );
 	define( 'WP_CONTENT_DIR', '/wp/wp-content' );
 	define( 'WP_CONTENT_URL', 'http://localhost/wp-content/uploads' );
 
