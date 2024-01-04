@@ -49,7 +49,7 @@
     "eslint-plugin-disable": "^2.0.3",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "mini-css-extract-plugin": "^2.7.6",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.33",
     "postcss-loader": "^7.3.4",
     "sass": "^1.69.7",
     "sass-loader": "^13.3.3",
