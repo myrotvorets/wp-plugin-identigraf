@@ -39,9 +39,9 @@ final class Admin {
 		add_options_page( __( 'IDentigraF Settings', 'i8fa' ), __( 'IDentigraF', 'i8fa' ), 'manage_options', self::OPTIONS_MENU_SLUG, [ __CLASS__, 'options_page' ] );
 		add_menu_page( __( 'Search by Photo', 'i8fa' ), __( 'IDentigraF', 'i8fa' ), 'read', 'i8f' );
 
-		$this->search_slug  = add_submenu_page( 'i8f', __( 'Search by Photo', 'i8fa' ), __( 'Search', 'i8fa' ), 'read', 'i8f', [ $this, 'i8f_page' ] );
-		$this->compare_slug = add_submenu_page( 'i8f', __( 'Compare Faces', 'i8fa' ), __( 'Compare', 'i8fa' ), 'read', 'i8f-compare', [ $this, 'i8f_page' ] );
-		$this->video_slug   = add_submenu_page( 'i8f', __( 'Upload Video', 'i8fa' ), __( 'Video', 'i8fa' ), 'read', 'i8f-video', [ $this, 'i8f_page' ] );
+		$this->search_slug  = (string) add_submenu_page( 'i8f', __( 'Search by Photo', 'i8fa' ), __( 'Search', 'i8fa' ), 'read', 'i8f', [ $this, 'i8f_page' ] );
+		$this->compare_slug = (string) add_submenu_page( 'i8f', __( 'Compare Faces', 'i8fa' ), __( 'Compare', 'i8fa' ), 'read', 'i8f-compare', [ $this, 'i8f_page' ] );
+		$this->video_slug   = (string) add_submenu_page( 'i8f', __( 'Upload Video', 'i8fa' ), __( 'Video', 'i8fa' ), 'read', 'i8f-video', [ $this, 'i8f_page' ] );
 
 		if ( $this->search_slug && $this->compare_slug && $this->video_slug ) {
 			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
