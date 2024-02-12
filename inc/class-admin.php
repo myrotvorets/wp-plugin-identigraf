@@ -100,13 +100,21 @@ final class Admin {
 			$api_server    = Settings::instance()->get_api_server();
 			$ss_api_server = Settings::instance()->get_ss_api_server();
 
+			if ( defined( 'PSB_INTERNAL_DOMAIN' ) ) {
+				$base_url = get_bloginfo( 'url' );
+			} elseif ( defined( 'MYROTVORETS_PRIMARY_DOMAIN' ) ) {
+				$base_url = 'https://' . (string) MYROTVORETS_PRIMARY_DOMAIN;
+			} else {
+				$base_url = 'https://myrotvorets.center';
+			}
+
 			wp_localize_script( 'i8f', 'i8f', [
 				'aendpoint' => rtrim( $api_server, '/' ) . '/identigraf-auth/v2',
 				'iendpoint' => rtrim( $api_server, '/' ) . '/identigraf/v2',
 				'uendpoint' => rtrim( $api_server, '/' ) . '/identigraf-upload/v1',
 				'vendpoint' => rtrim( $ss_api_server, '/' ) . '/videntigraf/v1',
 				'title'     => get_admin_page_title(),
-				'baseurl'   => defined( 'PSB_PRIMARY_DOMAIN' ) ? get_bloginfo( 'url' ) : 'https://myrotvorets.center',
+				'baseurl'   => $base_url,
 			] );
 
 			wp_set_script_translations( 'i8f', 'i8fjs', plugin_dir_path( dirname( __DIR__ ) . '/index.php' ) . '/lang' );
