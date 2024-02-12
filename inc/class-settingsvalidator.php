@@ -38,7 +38,7 @@ abstract class SettingsValidator {
 	 */
 	public static function sanitize( $settings ): array {
 		if ( is_array( $settings ) ) {
-			$settings = self::ensure_data_shape( $settings );
+			$settings = static::ensure_data_shape( $settings );
 
 			$settings['server'] = filter_var( $settings['server'], FILTER_VALIDATE_URL, [
 				'options' => [ 'default' => '' ],

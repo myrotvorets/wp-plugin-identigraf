@@ -60,7 +60,7 @@ abstract class Utils {
 			unlink( $tmp );
 		} while ( ! @mkdir( $tmp, 0700 ) ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.directory_mkdir, WordPress.PHP.NoSilencedErrors.Discouraged
 
-		register_shutdown_function( fn() => self::destroy_dir( $tmp ) );
+		register_shutdown_function( fn() => static::destroy_dir( $tmp ) );
 		return $tmp;
 	}
 
@@ -74,7 +74,7 @@ abstract class Utils {
 		foreach ( $files as $file ) {
 			$path = $dir . DIRECTORY_SEPARATOR . $file;
 			if ( is_dir( $path ) ) {
-				self::destroy_dir( $path );
+				static::destroy_dir( $path );
 			} else {
 				// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_unlink -- this happens in a temporary directory
 				unlink( $path );
