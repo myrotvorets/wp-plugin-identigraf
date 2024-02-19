@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || die();
 			<?php foreach ( $result as $detection_id => $data ) : ?>
 				<tr>
 					<td class="text-end">
-						<img src="<?=esc_attr( "d/{$detection_id}.jpg" ); ?>" alt="" style="position: sticky; top: 10px"/>
+						<img src="<?= esc_attr( "d/{$detection_id}.jpg" ); ?>" alt="" style="position: sticky; top: 10px"/>
 					</td>
 					<td>
 						<?php if ( empty( $data ) ) : ?>
@@ -41,12 +41,12 @@ defined( 'ABSPATH' ) || die();
 								<?php foreach ( $data as $match_id => $match ) : ?>
 								<li class="list-group-item">
 									<p class="mb-1">
-										<a href="<?=esc_attr( $match['link'] ); ?>" class="fw-bold fs-5 text-danger"><?=esc_html( $match['name'] ); ?></a>
-										&nbsp;<span class="badge bg-primary rounded-pill" aria-label="Similarity"><?=esc_html( (string) $match['similarity'] ); ?>%</span>
+										<a href="<?= esc_attr( $match['link'] ); ?>" class="fw-bold fs-5 text-danger"><?= esc_html( $match['name'] ); ?></a>
+										&nbsp;<span class="badge bg-primary rounded-pill" aria-label="Similarity"><?= esc_html( (string) $match['similarity'] ); ?>%</span>
 									</p>
-									<img src="<?=esc_attr( "m/{$match_id}.jpg" ); ?>" alt=""/><br/>
-									<a href="<?=esc_attr( $match['m_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Matched photo</a><br/>
-									<a href="<?=esc_attr( $match['f_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Main photo</a><br/>
+									<img src="<?= esc_attr( "m/{$match_id}.jpg" ); ?>" alt=""/><br/>
+									<a href="<?= esc_attr( $match['m_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Matched photo</a><br/>
+									<a href="<?= esc_attr( $match['f_photo'] ); ?>" target="_blank" rel="noopener noreferrer">Main photo</a><br/>
 								</li>
 								<?php endforeach; ?>
 							</ul>
