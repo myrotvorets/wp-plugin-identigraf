@@ -23,8 +23,8 @@ export function SearchApp(): ReactNode {
 			setError( '' );
 			setTrigger( Date.now() );
 			setCheckInterval( 300_000 );
-		} ).catch( ( e: Error ) => {
-			setError( e.message );
+		} ).catch( ( e: unknown ) => {
+			setError( ( e as Error ).message );
 			setCheckInterval( 5_000 );
 			console.error( e );
 		} );
