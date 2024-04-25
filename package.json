@@ -43,7 +43,7 @@
     "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^7.0.0",
-    "cssnano": "^6.0.3",
+    "cssnano": "^7.0.0",
     "eslint": "^8.56.0",
     "eslint-formatter-gha": "^1.4.3",
     "eslint-plugin-disable": "^2.0.3",
