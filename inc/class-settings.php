@@ -55,16 +55,19 @@ final class Settings implements ArrayAccess {
 	 */
 	public static function defaults(): array {
 		$defaults = self::$defaults;
+		/** @psalm-suppress RiskyTruthyFalsyComparison */
 		if ( ! empty( $_ENV['MYROTVORETS_API_SERVER'] ) ) {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$defaults['server'] = stripslashes( $_ENV['MYROTVORETS_API_SERVER'] );
 		}
 
+		/** @psalm-suppress RiskyTruthyFalsyComparison */
 		if ( ! empty( $_ENV['MYROTVORETS_SS_API_SERVER'] ) ) {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$defaults['ssserver'] = stripslashes( $_ENV['MYROTVORETS_SS_API_SERVER'] );
 		}
 
+		/** @psalm-suppress RiskyTruthyFalsyComparison */
 		if ( ! empty( $_ENV['WP_IDENTIGRAF_JWT_SECRET'] ) ) {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$defaults['secret'] = stripslashes( $_ENV['WP_IDENTIGRAF_JWT_SECRET'] );
@@ -108,10 +111,12 @@ final class Settings implements ArrayAccess {
 	}
 
 	public function valid_identigraf_settings(): bool {
+		/** @psalm-suppress RiskyTruthyFalsyComparison */
 		return ! empty( $this->options['secret'] ) && ! empty( $this->options['server'] );
 	}
 
 	public function valid_videntigraf_settings(): bool {
+		/** @psalm-suppress RiskyTruthyFalsyComparison */
 		return $this->valid_identigraf_settings() ||
 			( ! empty( $this->options['secret'] ) && ! empty( $this->options['ssserver'] ) );
 	}
