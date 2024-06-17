@@ -5,5 +5,6 @@ interface VideoPreviewProps {
 }
 
 export function VideoPreview( { video }: VideoPreviewProps ): ReactNode {
-	return video.length > 0 ? <video src={ video } className="mb-3" controls /> : null;
+	// eslint-disable-next-line sonarjs/media-has-caption
+	return video.length > 0 ? <video src={ video } className="mb-3" controls /> : null; // NOSONAR
 }

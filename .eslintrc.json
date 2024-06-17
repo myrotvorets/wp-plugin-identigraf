@@ -8,14 +8,11 @@
     },
     "extends": [
         "@myrotvorets/myrotvorets-ts",
-        "plugin:@wordpress/eslint-plugin/recommended-with-formatting"
+        "plugin:@wordpress/eslint-plugin/recommended"
     ],
     "rules": {
-        "no-invalid-this": "off",
-        "no-unused-vars": "off",
-        "no-use-before-define": "off",
-        "import/named": "off",
-        "dot-notation": "off"
+        "dot-notation": "off",
+        "sonarjs/function-return-type": "off"
     },
     "env": {
         "browser": true
