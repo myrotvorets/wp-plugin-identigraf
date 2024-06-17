@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { type Configuration, DefinePlugin } from 'webpack';
-import webpackDevServer from 'webpack-dev-server';
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
@@ -8,7 +8,7 @@ import type { Config as SVGOConfig } from 'svgo';
 
 const isProd = process.env[ 'NODE_ENV' ] === 'production';
 
-const config: Configuration & { devServer: webpackDevServer.Configuration } = {
+const config: Configuration & { devServer: DevServerConfiguration } = {
 	context: path.resolve( __dirname, '..' ),
 	entry: {
 		search: path.resolve( __dirname, '../src/search.tsx' ),

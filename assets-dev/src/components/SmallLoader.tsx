@@ -18,7 +18,7 @@ export function SmallLoader( {
 }: Readonly<Props> ): ReactNode {
 	return (
 		<div className={ `d-flex justify-content-${ justifyContent } align-items-${ alignItems }` }>
-			<img src={ logo } alt={ text ? '' : 'Зачекайте…' } width={ width } className="SmallLoader" />
+			<img src={ logo } alt={ text ? '' : __( 'Please wait…', 'i8fjs' ) } width={ width } className="SmallLoader" />
 			{ text && <span className="px-2">{ text }</span> }
 		</div>
 	);

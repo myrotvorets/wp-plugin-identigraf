@@ -8,11 +8,11 @@ export default function( env: Record<string, any>, args: Record<string, any> ): 
 	let config: Configuration;
 	if ( args[ 'mode' ] === 'production' ) {
 		process.env[ 'NODE_ENV' ] = 'production';
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		// eslint-disable-next-line @typescript-eslint/no-require-imports
 		config = require( `./.webpack/webpack.production.ts` ).default();
 	} else {
 		process.env[ 'NODE_ENV' ] = 'development';
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		// eslint-disable-next-line @typescript-eslint/no-require-imports
 		config = require( `./.webpack/webpack.development.ts` ).default();
 	}
 

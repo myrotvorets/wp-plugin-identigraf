@@ -68,6 +68,7 @@ export function MatchedFaces( { faceID, guid }: Readonly<Props> ): ReactNode {
 		<>
 			<ListGroup variant="flush">
 				{ matchedFaces.map( ( face, index ) => (
+					// eslint-disable-next-line sonarjs/no-array-index-key
 					<Face { ...face } key={ index /* NOSONAR */ } onClick={ onFaceLinkClicked } />
 				) ) }
 			</ListGroup>

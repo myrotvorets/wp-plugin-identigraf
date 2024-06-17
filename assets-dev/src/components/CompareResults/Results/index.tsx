@@ -25,6 +25,7 @@ export function Results( { guid, results }: Readonly<Props> ): ReactNode {
 
 				<Carousel interval={ null } fade style={ { height: '40vh' } } className="mb-3">
 					{ similarities.map( ( similarity, index ) => (
+						// eslint-disable-next-line sonarjs/no-array-index-key
 						<Carousel.Item key={ index /* NOSONAR */ }>
 							<Image
 								fluid
