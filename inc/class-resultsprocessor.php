@@ -211,7 +211,7 @@ final class ResultsProcessor {
 		ob_start();
 		extract( $params, EXTR_SKIP );
 		require __DIR__ . "/../views/{$view}.php"; // NOSONAR
-		return ob_get_clean();
+		return (string) ob_get_clean();
 	}
 
 	private function archive_results( string $path, string $archive ): void {

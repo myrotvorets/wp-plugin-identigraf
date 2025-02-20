@@ -56,6 +56,10 @@ abstract class Utils {
 		do {
 			// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_tempnam
 			$tmp = tempnam( get_temp_dir(), '' );
+			if ( false === $tmp ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+				throw new Exception( __( 'Failed to create temporary directory.', 'i8f' ) );
+			}
 			// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_unlink
 			unlink( $tmp );
 		} while ( ! @mkdir( $tmp, 0700 ) ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.directory_mkdir, WordPress.PHP.NoSilencedErrors.Discouraged
@@ -70,7 +74,7 @@ abstract class Utils {
 		}
 
 		/** @var string[] $files */
-		$files = array_diff( scandir( $dir ), [ '.', '..' ] );
+		$files = array_diff( (array) scandir( $dir ), [ '.', '..' ] );
 		foreach ( $files as $file ) {
 			$path = $dir . DIRECTORY_SEPARATOR . $file;
 			if ( is_dir( $path ) ) {

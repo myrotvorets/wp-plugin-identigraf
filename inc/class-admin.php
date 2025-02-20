@@ -131,7 +131,7 @@ final class Admin {
 			$tag = preg_replace( '/(.*)(><\/script>)/', '$1 type="module"$2', $tag );
 		}
 
-		return $tag;
+		return (string) $tag;
 	}
 
 	public static function options_page(): void {
