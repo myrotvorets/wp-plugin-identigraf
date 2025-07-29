@@ -16,7 +16,7 @@ export function CapturedFace( { face, guid, index }: Readonly<Props> ): ReactNod
 		<ListGroup.Item>
 			<Row>
 				<Col>
-					<h3>{ /* translators: 1 - face number */ sprintf( __( 'Face %d', 'i8fjs' ), index + 1 ) }</h3>
+					<h3>{ /* translators: %d - face number */ sprintf( __( 'Face %d', 'i8fjs' ), index + 1 ) }</h3>
 				</Col>
 			</Row>
 			<Row>
