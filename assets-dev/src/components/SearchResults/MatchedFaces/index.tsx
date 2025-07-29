@@ -55,7 +55,7 @@ export function MatchedFaces( { faceID, guid }: Readonly<Props> ): ReactNode {
 	if ( error ) {
 		return (
 			<Card.Body>
-				<Alert variant="danger">{ /* translators: 1 - error message */ sprintf( __( 'Error loading faces: %s', 'i8fjs' ), error ) }</Alert>;
+				<Alert variant="danger">{ /* translators: %s - error message */ sprintf( __( 'Error loading faces: %s', 'i8fjs' ), error ) }</Alert>;
 			</Card.Body>
 		);
 	}

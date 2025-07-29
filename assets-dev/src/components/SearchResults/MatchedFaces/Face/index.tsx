@@ -43,7 +43,7 @@ export function Face( {
 					/>
 				</Col>
 				<Col sm={ 4 }>
-					{ country && <p className="mb-1">{ /* translators: 1: country name */ sprintf( __( 'Country: %s', 'i8fjs' ), country ) }</p> }
+					{ country && <p className="mb-1">{ /* translators: %s: country name */ sprintf( __( 'Country: %s', 'i8fjs' ), country ) }</p> }
 					<PhotoLink link={ matchedPhoto } text="Світлина, яка збіглась" onClick={ onClick } />
 					<PhotoLink link={ primaryPhoto } text="Основна світлина" onClick={ onClick } />
 					<p className="mb-1">{ /* translators: 1: similarity */ sprintf( __( 'Similarity: %1$d%%', 'i8fjs' ), similarity ) }</p>
