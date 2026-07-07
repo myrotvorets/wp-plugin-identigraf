@@ -24,7 +24,7 @@
     "yet-another-react-lightbox": "^3.21.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
+    "@babel/core": "^8.0.0",
     "@babel/plugin-transform-class-properties": "^7.25.4",
     "@babel/plugin-transform-numeric-separator": "^7.24.7",
     "@babel/plugin-transform-optional-chaining": "^7.24.8",
